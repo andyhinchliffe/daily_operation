@@ -9,6 +9,11 @@ const nextConfig = {
                 port: '',
                 // pathname: '/wp/wp-content/uploads/**',
             },
+
+            {
+                protocol: 'https',
+                hostname: 'aceternity.com',
+            },
         ],
     },
 };
