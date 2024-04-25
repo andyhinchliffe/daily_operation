@@ -44,7 +44,7 @@ const Page = () => {
         {/* <h1 className=" text-white font-semibold text-9xl">DAILY</h1>
         <h1 className="text-center text-white font-semibold text-9xl">OPERATION</h1> */}
         
-        <h1 className="text-center text-[#3192c5] font-semibold text-9xl">
+        <h1 className="text-6xl text-center text-[#3192c5] font-semibold md:text-9xl">
         
       <TextTransition springConfig={presets.gentle}>{TEXTS[index % TEXTS.length]}</TextTransition>
     </h1>
