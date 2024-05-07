@@ -58,12 +58,12 @@ const Page = () => {
       
       </div>
     </div>
-    <div className="bg-[#A9ADB1] px-20 flex flex-wrap justify-center">-
+    <div className="bg-[#A9ADB1] px-2 flex flex-wrap justify-center">-
     <div className="card w-96 h-96 m-10 bg-gray-100 shadow-xl">
-  <figure><img src="iphone_mockup.jpg" alt="car!"/></figure>
+  <figure><img src="site7.jpg" alt="car!"/></figure>
   <div className="card-body">
-    <h2 className="card-title">Life hack</h2>
-    {visible1 ? <p>How to park your car at your garage?</p> : null}
+    <h2 className="card-title">Grassroots Stage</h2>
+    {visible1 ? <p>Mobile first web app used at the Sheffield Food Festival displaying set times and biogs of grassroots artists<p className='mt-6'><a  href="https://grassroots-sheffield.co.uk/">Link</a></p></p> : null}
 
     <div className="card-actions justify-end">
       <button onClick={() => setVisible1(!visible1)} className="btn btn-[#A9ADB1]"><CiCircleInfo size={20}/></button>
@@ -71,35 +71,13 @@ const Page = () => {
   </div>
 </div>
 
-<div className="card w-96 h-96 m-10 bg-gray-100 shadow-xl">
-  <figure><img src="iphone_mockup.jpg" alt="car!"/></figure>
-  <div className="card-body">
-  <h2 className="card-title">Life hack</h2>
-  {visible2 ? <p>How to park your car at your garage?</p> : null}
-    
-    <div className="card-actions justify-end">
-    <button onClick={() => setVisible2(!visible2)} className="btn btn-[#A9ADB1]"><CiCircleInfo size={20}/></button>
-    </div>
-  </div>
-</div>
-
+{/* s */}
 
 <div className="card w-96 h-96 m-10 bg-gray-100 shadow-xl">
-  <figure><img src="iphone_mockup.jpg" alt="car!"/></figure>
+  <figure><img className="m-1" src="sff_desktop_about.jpeg" alt="car!"/></figure>
   <div className="card-body">
-    <h2 className="card-title">Life hack</h2>
-    {visible3 ? <p>How to park your car at your garage?</p> : null}
-    <div className="card-actions justify-end">
-    <button onClick={() => setVisible3(!visible3)} className="btn btn-[#A9ADB1]"><CiCircleInfo size={20}/></button>
-    </div>
-  </div>
-</div>
-
-<div className="card w-96 h-96 m-10 bg-gray-100 shadow-xl">
-  <figure><img src="iphone_mockup.jpg" alt="car!"/></figure>
-  <div className="card-body">
-    <h2 className="card-title">Life hack</h2>
-    {visible4 ? <p>How to park your car at your garage?</p> : null}
+    <h2 className="card-title">Desktop Version</h2>
+    {visible4 ? <p>Desktop Version built to give more information about each individual artist. </p> : null}
     <div className="card-actions justify-end">
     <button onClick={() => setVisible4(!visible4)} className="btn btn-[#A9ADB1]"><CiCircleInfo size={20}/></button>
     </div>
@@ -109,10 +87,10 @@ const Page = () => {
 
 
 <div className="card w-96 h-96 m-10 bg-gray-100 shadow-xl">
-  <figure><img src="iphone_mockup.jpg" alt="car!"/></figure>
+  <figure><img src="banner_mockup.jpg" alt="car!"/></figure>
   <div className="card-body">
-    <h2 className="card-title">Life hack</h2>
-    {visible5 ? <p>How to park your car at your garage?</p> : null}
+    <h2 className="card-title">QR Code Banner</h2>
+    {visible5 ? <p>QR code for customers to access the full site.</p> : null}
     <div className="card-actions justify-end">
     <button onClick={() => setVisible5(!visible5)} className="btn btn-[#A9ADB1]"><CiCircleInfo size={20}/></button>
     </div>
@@ -121,10 +99,10 @@ const Page = () => {
 
 
 <div className="card w-96 h-96 m-10 bg-gray-100 shadow-xl">
-  <figure><img src="iphone_mockup.jpg" alt="car!"/></figure>
+  <figure><img src="cards.jpg" alt="car!"/></figure>
   <div className="card-body">
-    <h2 className="card-title">Life hack</h2>
-    {visible6 ? <p>How to park your car at your garage?</p> : null}
+    <h2 className="card-title">NFC cards</h2>
+    {visible6 ? <p>NFC cards for customers to access the full site.</p> : null}
     <div className="card-actions justify-end">
     <button onClick={() => setVisible6(!visible6)} className="btn btn-[#A9ADB1]"><CiCircleInfo size={20}/></button>
     </div>
@@ -144,7 +122,7 @@ const Page = () => {
       </div>
       <footer className="footer footer-center p-4 bg-base-300 text-base-content">
   <aside>
-    <p>Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
+    <p>Copyright © 2024 - All right reserved by Daily Operation</p>
   </aside>
 </footer>
   </body>);
