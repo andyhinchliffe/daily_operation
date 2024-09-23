@@ -8,8 +8,8 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  title: "Daily Operation - Lo-Fi focus music platform",
-  description: "Explore top-quality Lo-Fi Boom Bap Beats on our platform. Perfect for studying, relaxing, and creative projects, our collection offers seamless streaming and downloads. Join our community for fresh, unique sounds from top producers.",
+  title: "Daily Operation - Lo-Fi Boom Bap Beats music platform",
+  description: "Explore top-quality Lo-Fi Boom Bap Beats on our platform. Perfect for studying, relaxing, and creative projects.",
 };
 
 export default function RootLayout({ children }) {

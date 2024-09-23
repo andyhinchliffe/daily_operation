@@ -180,7 +180,7 @@ export default function Home() {
 
 
    <div className='flex'>
-<p className=' text-3xl pt-2 pl-4 font-semibold text-gray-400'>Daily Operation</p> 
+<h1 className=' text-3xl pt-2 pl-4 font-semibold text-gray-400'>Daily Operation</h1> 
   
 
 <div className="ml-10 ">
@@ -253,7 +253,7 @@ export default function Home() {
 
 
 
-<p className='pl-4   text-gray-400'>Lo-fi Boom Bap Focus Beats</p>
+<h2 className='pl-4   text-gray-400'>Lo-fi Boom Bap Focus Beats</h2>
 
 
 
