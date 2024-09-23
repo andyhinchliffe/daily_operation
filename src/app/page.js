@@ -225,7 +225,18 @@ export default function Home() {
 <dialog id="my_modal_4" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Info</h3>
-    <p className="py-4">Welcome to the ultimate destination for Lo-Fi Boom Bap Beats! Our platform is a haven for those who crave smooth, soulful rhythms fused with the raw, gritty essence of boom bap. Inspired by classic hip-hop and the chilled vibes of lo-fi, we bring you a curated selection of instrumentals perfect for relaxation, studying, creative projects, or simply vibing out. Our collection blends the timeless, drum-heavy patterns of boom bap with the laid-back, nostalgic atmosphere of lo-fi music. Whether you're an artist looking for the perfect background track or a listener who enjoys mellow beats with that old-school hip-hop feel, our platform has something for everyone. Tune in to experience seamless playlists, handpicked by experts, designed to help you focus, unwind, or find inspiration in the grooves of soulful samples and dusty drums.Features include: High-Quality Playlists: Carefully curated Lo-Fi Boom Bap mixes, updated regularly to ensure a fresh and consistent vibe. No Interruptions: Ad-free, non-stop listening for uninterrupted chill sessions. Perfect for All Occasions: From background ambiance to focus music or beat-making inspiration, our platform provides the soundtrack for your day. Support for Creators: Access beats for personal projects, podcasts, or videos, while supporting independent beatmakers. Immerse yourself in the world of laid-back rhythms and old-school textures with our exclusive Lo-Fi Boom Bap Beats. Let the beats take over!</p>
+    <p>
+  Welcome to the ultimate destination for Lo-Fi Boom Bap Beats! Our platform is a haven for those who crave smooth, soulful rhythms fused with the raw, gritty essence of boom bap. Inspired by classic hip-hop and the chilled vibes of lo-fi, we bring you a curated selection of instrumentals perfect for relaxation, studying, creative projects, or simply vibing out. Our collection blends the timeless, drum-heavy patterns of boom bap with the laid-back, nostalgic atmosphere of lo-fi music. Whether you&apos;re an artist looking for the perfect background track or a listener who enjoys mellow beats with that old-school hip-hop feel, our platform has something for everyone. Tune in to experience seamless playlists, handpicked by experts, designed to help you focus, unwind, or find inspiration in the grooves of soulful samples and dusty drums.
+  <br />
+  Features include:
+  <ul>
+    <li>High-Quality Playlists: Carefully curated Lo-Fi Boom Bap mixes, updated regularly to ensure a fresh and consistent vibe.</li>
+    <li>No Interruptions: Ad-free, non-stop listening for uninterrupted chill sessions.</li>
+    <li>Perfect for All Occasions: From background ambiance to focus music or beat-making inspiration, our platform provides the soundtrack for your day.</li>
+    <li>Support for Creators: Access beats for personal projects, podcasts, or videos, while supporting independent beatmakers.</li>
+  </ul>
+  Immerse yourself in the world of laid-back rhythms and old-school textures with our exclusive Lo-Fi Boom Bap Beats. Let the beats take over!
+</p>
     <div className="modal-action">
       <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
