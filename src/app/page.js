@@ -113,6 +113,7 @@ export default function Home() {
     const newTrackPath = `https://develop.dailyoperation.uk/audio/track${trackId}.mp3`;
     console.log(newTrackPath);
     setTrackPath(newTrackPath);
+    
 
     const sound = new Howl({
       src: [newTrackPath],
@@ -190,7 +191,7 @@ export default function Home() {
 </div>
 
    {/* Open the modal using document.getElementById('ID').showModal() method */}
-   <button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_2').showModal()}><FaList fa-3/></button>
+   <button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_2').showModal()}><FaList /></button>
 <dialog id="my_modal_2" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Playlist</h3>
