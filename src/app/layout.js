@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={roboto.className}>{children}</body>
-      {/* <GoogleAnalytics gaId="G-K7SSN3HFSE" /> */}
+      <GoogleAnalytics gaId="G-T3B34PZSBB" />
     </html>
   );
 }
