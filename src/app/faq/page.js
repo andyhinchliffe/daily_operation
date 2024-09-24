@@ -50,14 +50,14 @@ const page = () => {
   <input type="radio" name="my-accordion-1" defaultChecked />
   <div className="collapse-title text-xl font-medium">How does the platform work?</div>
   <div className="collapse-content">
-    <p>Our artists upload their music to the platform as individual tracks. When a track ends, another track by a random artist is automatically played, creating a continuous listening experience.</p>
+  <p>Our artists upload their music to the platform as individual tracks. When a track ends, another track by a random artist is automatically played, creating a continuous listening experience.</p>
   </div>
 </div>
 <div className="collapse  my-1 bg-base-300">
   <input type="radio" name="my-accordion-1" />
   <div className="collapse-title text-xl font-medium">Why don't I recognize any of the artists' names?</div>
   <div className="collapse-content">
-    <p>We ask every artist to release their music on our platform under a new alias or pseudonym exclusive to us, regardless of whether they've released music on other platforms. Most of our artists are established musicians and producers, but they've started a new project specifically for us.</p>
+  <p>We ask every artist to release their music on our platform under a new alias or pseudonym exclusive to us, regardless of whether they've released music on other platforms. Most of our artists are established musicians and producers, but they've started a new project specifically for us.</p>
   </div>
 </div>
 
