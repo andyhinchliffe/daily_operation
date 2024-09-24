@@ -205,6 +205,8 @@ export default function Home() {
   </div>
 </dialog>
 
+<a href="./faq"><div className="mt-3 ml-2 text-gray-500 text-base">FAQ</div></a>
+
  {/* Open the modal using document.getElementById('ID').showModal() method */}
  <button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_3').showModal()}><CiSearch/></button>
 <dialog id="my_modal_3" className="modal">
@@ -225,16 +227,20 @@ export default function Home() {
 <dialog id="my_modal_4" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Info</h3>
-    <p>
-  Welcome to the ultimate destination for Lo-Fi Boom Bap Beats! Our platform is a haven for those who crave smooth, soulful rhythms fused with the raw, gritty essence of boom bap. Inspired by classic hip-hop and the chilled vibes of lo-fi, we bring you a curated selection of instrumentals perfect for relaxation, studying, creative projects, or simply vibing out. Our collection blends the timeless, drum-heavy patterns of boom bap with the laid-back, nostalgic atmosphere of lo-fi music. Whether you&apos;re an artist looking for the perfect background track or a listener who enjoys mellow beats with that old-school hip-hop feel, our platform has something for everyone. Tune in to experience seamless playlists, handpicked by experts, designed to help you focus, unwind, or find inspiration in the grooves of soulful samples and dusty drums.
-  <br />
-  Features include:
-  <ul>
-    <li>High-Quality Playlists: Carefully curated Lo-Fi Boom Bap mixes, updated regularly to ensure a fresh and consistent vibe.</li>
-    <li>No Interruptions: Ad-free, non-stop listening for uninterrupted chill sessions.</li>
-    <li>Perfect for All Occasions: From background ambiance to focus music or beat-making inspiration, our platform provides the soundtrack for your day.</li>
-    <li>Support for Creators: Access beats for personal projects, podcasts, or videos, while supporting independent beatmakers.</li>
-  </ul>
+    <div>
+  Welcome to the ultimate destination for Lo-Fi Boom Bap Beats! Our platform is a haven for those who crave smooth, soulful rhythms fused with the raw, gritty essence of boom bap. Inspired by classic hip-hop and the chilled vibes of lo-fi, we bring you a curated selection of instrumentals perfect for relaxation, studying, creative projects, or simply vibing out. Our collection blends the timeless, drum-heavy patterns of boom bap with the laid-back, nostalgic atmosphere of lo-fi music. Whether you're an artist looking for the perfect background track or a listener who enjoys mellow beats with that old-school hip-hop feel, our platform has something for everyone. Tune in to experience seamless playlists, handpicked by experts, designed to help you focus, unwind, or find inspiration in the grooves of soulful samples and dusty drums.
+</div>
+
+<p>Features include:</p>
+
+<ul>
+  <li>High-Quality Playlists: Carefully curated Lo-Fi Boom Bap mixes, updated regularly to ensure a fresh and consistent vibe.</li>
+  <li>No Interruptions: Ad-free, non-stop listening for uninterrupted chill sessions.</li>
+  <li>Perfect for All Occasions: From background ambiance to focus music or beat-making inspiration, our platform provides the soundtrack for your day.</li>
+  <li>Support for Creators: Access beats for personal projects, podcasts, or videos, while supporting independent beatmakers.</li>
+</ul>
+
+<p>
   Immerse yourself in the world of laid-back rhythms and old-school textures with our exclusive Lo-Fi Boom Bap Beats. Let the beats take over!
 </p>
     <div className="modal-action">
@@ -245,6 +251,8 @@ export default function Home() {
     </div>
   </div>
 </dialog>
+
+
 
 
 
@@ -473,7 +481,36 @@ export default function Home() {
       
 
  }
+ <footer className="footer bg-neutral text-neutral-content p-10">
+ <div className=''>
+        <div class="text-xs">
+          <strong className="block font-bold text-lg text-gray-400 font-medium">Daily Operation</strong>
+          <a href="https://dailyoperation.uk">
+          <p>Lo-fi Boom Bap Focus Beats</p>
+          <p className="text-xstext-base" > dailyoperation.uk </p>
+          </a>
+        </div>
+      </div>
 
+      <div></div>
+ <nav>
+    <h6 className="footer-title">Daily Operation</h6>
+    <a href="/faq" className="link link-hover">FAQ</a>
+    <a href="/contact" className="link link-hover">Contact</a>
+    <a href="https://youtube.com/@dailyoperationuk" className="link link-hover">YouTube</a>
+    
+    
+  </nav>
+  <nav>
+    <h6 className="footer-title">Legal</h6>
+    <a className="link link-hover">Terms of use</a>
+    <a className="link link-hover">Privacy policy</a>
+    <a className="link link-hover">Cookie policy</a>
+    
+    
+  </nav>
+  
+</footer>
   </>
   );
 }
