@@ -55,9 +55,9 @@ const page = () => {
 </div>
 <div className="collapse  my-1 bg-base-300">
   <input type="radio" name="my-accordion-1" />
-  <div className="collapse-title text-xl font-medium">Why don't I recognize any of the artists' names?</div>
+  <div className="collapse-title text-xl font-medium">Why don&#39;t I recognize any of the artists&#39; names?</div>
   <div className="collapse-content">
-  <p>We ask every artist to release their music on our platform under a new alias or pseudonym exclusive to us, regardless of whether they've released music on other platforms. Most of our artists are established musicians and producers, but they've started a new project specifically for us.</p>
+  <p>We ask every artist to release their music on our platform under a new alias or pseudonym exclusive to us, regardless of whether they&#39;ve released music on other platforms. Most of our artists are established musicians and producers, but they&#39;ve started a new project specifically for us.</p>
   </div>
 </div>
 
@@ -74,7 +74,7 @@ const page = () => {
   <input type="radio" name="my-accordion-1" />
   <div className="collapse-title text-xl font-medium">Is the platform really free?</div>
   <div className="collapse-content">
-    <p>Yes, while in development, the platform is free to use. However, the introduction of advertisements is planned for the future, though they haven't been implemented yet.</p>
+    <p>Yes, while in development, the platform is free to use. However, the introduction of advertisements is planned for the future, though they haven&#39;t been implemented yet.</p>
   </div>
 </div>
 
