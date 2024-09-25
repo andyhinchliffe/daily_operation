@@ -26,7 +26,7 @@ export const metadata = {
       "Explore top-quality Lo-Fi Boom Bap Hip Hop beats on our platform. Perfect for studying, relaxing, and creative projects.",
     images: [
       {
-        url: "https://dailyoperation.uk/images/start_images.png",
+        url: "https://dailyoperation.uk/screenshot_dailyoperation.png",
         width: 1200,
         height: 630,
         alt: "dailyoperation",
@@ -41,7 +41,7 @@ export const metadata = {
     site: "@dailyoperationuk",
     images: [
       {
-        url: "https://dailyoperation.uk/images/start_images.png",
+        url: "https://dailyoperation.uk/screenshot_dailyoperation.png",
         width: 1200,
         height: 630,
         alt: "dailyoperationuk"
