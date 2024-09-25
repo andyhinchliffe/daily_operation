@@ -180,7 +180,7 @@ export default function Home() {
 
 
    <div className='flex'>
-<h1 className=' text-3xl pt-2 pl-4 font-semibold text-gray-400'>Daily Operation</h1> 
+<h1 className=' text-3xl pt-2 pl-4 font-semibold text-[#EAD8B1]'>Daily Operation</h1> 
   
 
 <div className="ml-10 ">
@@ -193,7 +193,7 @@ export default function Home() {
    {/* Open the modal using document.getElementById('ID').showModal() method */}
    <button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_2').showModal()}><FaList /></button>
 <dialog id="my_modal_2" className="modal">
-  <div className="modal-box">
+  <div className="modal-box hidden sm:block">
     <h3 className="font-bold text-lg">Playlist</h3>
     <p className="py-4">Playlist in development.</p>
     <div className="modal-action">
