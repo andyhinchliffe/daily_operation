@@ -191,7 +191,7 @@ export default function Home() {
 </div>
 
    {/* Open the modal using document.getElementById('ID').showModal() method */}
-   <button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_2').showModal()}><FaList /></button>
+   <button className="hidden sm:block btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_2').showModal()}><FaList /></button>
 <dialog id="my_modal_2" className="modal">
   <div className="modal-box hidden sm:block">
     <h3 className="font-bold text-lg">Playlist</h3>
@@ -208,7 +208,7 @@ export default function Home() {
 <a href="./faq"><div className="mt-3 ml-2 text-gray-500 text-base">FAQ</div></a>
 
  {/* Open the modal using document.getElementById('ID').showModal() method */}
- <button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_3').showModal()}><CiSearch/></button>
+ <button className="btn hidden sm:block text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_3').showModal()}><CiSearch/></button>
 <dialog id="my_modal_3" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Search</h3>
