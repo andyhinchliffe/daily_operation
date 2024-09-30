@@ -10,6 +10,7 @@ import { FaHome } from "react-icons/fa";
 import { CiCircleInfo } from "react-icons/ci";
 import { CiPause1 } from "react-icons/ci";
 import { FaList } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa6";
 
 
 
@@ -133,8 +134,16 @@ export default function Home() {
 
   const handleStop = () => {
 
-    currentSound.stop();
+    currentSound.pause();
     
+  };
+
+  const reStart = () => {
+    currentSound.play();
+  };
+
+  const handlePause = () => {
+    currentSound.pause();
   };
 
   const stopAll = () => {
@@ -403,7 +412,8 @@ export default function Home() {
     <div className="card-actions justify-end">
     
 
-      <button onClick={handleStop} ><CiPause1 /></button>
+      {startedSelection ? <button onClick={handleStop} ><CiPause1 /></button> : null}
+      <button onClick={reStart} ><FaPlay /></button>
     </div>
   </div>
 </div>
@@ -448,6 +458,8 @@ export default function Home() {
             
             <Image onClick={() => handlePostClick(post)}  className='rounded-lg hover:cursor-pointer shadow-lg' src={post._embedded?.['wp:featuredmedia']?.[0]?.source_url} alt={post._embedded?.['wp:featuredmedia']?.[0]?.alt_text} width={150} height={150}/>
               <h2 className="text-slate-200">{post.title.rendered}</h2>
+
+              <a href='./artists'>
               <p onClick={() => setArtistDisplay(post._embedded['wp:term'][0].map(term => (
                   term.taxonomy === 'category' ? term.name : ''
                 )).filter(Boolean).join(', ')) 
@@ -456,6 +468,7 @@ export default function Home() {
                   term.taxonomy === 'category' ? term.name : ''
                 )).filter(Boolean).join(', ')}
               </p>
+              </a>
               
               <p>{post.id}</p>
               {/* <button onClick={() => setTrackPath("../audio/track" + post.id +".mp3")} className="text-slate-200">Play me</button> */}
