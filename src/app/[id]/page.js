@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 import Image from "next/image";
 
@@ -17,8 +18,10 @@ import { FaPlay } from "react-icons/fa6";
 
 
 
+export default function Page({ params }) {
 
-export default function Home() {
+  const router = useRouter()
+  const { id } = params;
 
   
   const [artistDataWP, setArtistDataWP] = useState([]);
@@ -30,80 +33,75 @@ export default function Home() {
   const [frontPage, setFrontPage] = useState(true);
   const [startedSelection, setStartedSelection] = useState(false);
   
+  
   const [artistDisplay, setArtistDisplay] = useState(null);
   const [artistDisplayInfo, setArtistDisplayInfo] = useState(null);
   const [musicPlaying, setMusicPlaying] = useState(false);
   const [showinfo, setShowInfo] = useState(false);
+  const [globalArtistID, setGlobalArtistID] = useState(null);
   const [isSoundPlaying, setIsSoundPlaying] = useState(false);
   const [playCount, setPlayCount] = useState(0);
   const [playLimitNum, setPlayLimitNum] = useState(7);
+  const [errorMessage, setErrorMessage] = useState("");
+  
 
   const {Howl, Howler} = require('howler');
+
   
 
+  
+
+
+  // Fetch the category based on the slug from params
   useEffect(() => {
-    fetch('https://develop.dailyoperation.uk/streaming/wp-json/wp/v2/posts?_embed&per_page=16', {
-      method: 'GET',
-    })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    // Work with the received post data
-    setFrontPage(false);
-    setArtistDataWP(data)
-    setPlaying(data[3])
-    const trackId = data[3].id;
-    setTrackPath(`https://develop.dailyoperation.uk/audio/track${trackId}.mp3`)
-    setIsLoaded(true);
-    
-    
-    console.log("got it!")
-    console.log(artistDataWP)
-    
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  });
+    fetch(`https://develop.dailyoperation.uk/streaming/wp-json/wp/v2/categories?slug=${id}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.length > 0) {
+          setGlobalArtistID(data[0].id); // Set globalArtistID to the fetched category ID
+          console.log(`Category ID: ${data[0].id}, Name: ${data[0].name}, Slug: ${data[0].slug}`);
+        } else {
+          console.log('Category not found');
+          
+
+        }
+      })
+      .catch(error => console.error('Error fetching category by slug:', error));
+  }, [id]);
+
+
 
   
+// Fetch posts based on globalArtistID when it changes
+useEffect(() => {
+  if (globalArtistID) {
+    fetch(`https://develop.dailyoperation.uk/streaming/wp-json/wp/v2/posts?_embed&per_page=16&categories=${globalArtistID}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setArtistDataWP(data);
+        setPlaying(data[0]); // Start with the first post
+        const trackId = data[0].id;
+        setTrackPath(`https://develop.dailyoperation.uk/audio/track${trackId}.mp3`);
+        setIsLoaded(true);
+        setFrontPage(false);
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  }
+}, [globalArtistID]);
 
-  }, []);
 
 
-  // const fetchPost16 = () => {
-  //   fetch('https://develop.dailyoperation.uk/streaming/wp-json/wp/v2/posts/16?_embed', {
-  //     method: 'GET',
-  //   })
-  //   .then(response => {
-  //     if (!response.ok) {
-  //       throw new Error('Network response was not ok');
-  //     }
-  //     return response.json();
-  //   })
-  //   .then(data => {
-  //     setPlaying(data);
-  //     console.log("got it!");
-  //     console.log(data);
-  //   })
-  //   .catch(error => {
-  //     console.error('There was a problem with the fetch operation:', error);
-  //   });
-  // };
-  // const updatePlaying = () => {
-
-  //   setPlaying(post) 
-  // }
-  // const updatePath = () => {
-
-  //   setTrackPath(`../audio/track` + `${playing.id}` + `.mp3`)
-  //   console.log(trackPath)
-  // }
+  
 
   const handlePostClick = (post) => {
+    // checkPlayCount();
     setPlaying(post);
     handlePlay(post);
     setStartedSelection(true);
@@ -112,13 +110,13 @@ export default function Home() {
   const handlePlay = (track) => {
     if (currentSound) {
       currentSound.stop();
-      // checkPlayCount();
       
     }
-
+    
     setPlayCount(playCount + 1);
+    // checkPlayCount();
     if (playCount < playLimitNum) {
-
+    
     const trackId = track.id;
     const newTrackPath = `https://develop.dailyoperation.uk/audio/track${trackId}.mp3`;
     console.log(newTrackPath);
@@ -132,12 +130,13 @@ export default function Home() {
     });
     
     setCurrentSound(sound);
-    setIsSoundPlaying(true);
     sound.play();
+    setIsSoundPlaying(true);
   } else {
     handleTimeLimit();
   }
   };
+
 
   const handleNextTrack = () => {
     const nextTrack = artistDataWP[Math.floor(Math.random() * artistDataWP.length)];
@@ -155,16 +154,28 @@ export default function Home() {
   const reStart = () => {
     currentSound.play();
     setIsSoundPlaying(true);
+    
   };
 
   const handlePause = () => {
-    currentSound.pause();
-    setIsSoundPlaying(false);
+    if (currentSound) {
+      currentSound.pause();  // Pause the sound
+      setIsSoundPlaying(false);  // Update state to reflect pause
+    }
   };
 
   const stopAll = () => {
     Howler.unload();
   };
+
+  // const handleTimeLimit = () => {
+  //   console
+  //   // Show the modal
+  //   console.log("pausing");
+  //   Howler.unload();
+  //   document.getElementById('my_modal_8').showModal();
+
+  // };
 
   const handleTimeLimit = () => {
     // Pause the music and show modal
@@ -174,9 +185,9 @@ export default function Home() {
   };
   
   // const checkPlayCount = () => {
-  //   if (playCount > 5) {
-  //     handleStop();
-  //     handleTimeLimit();
+  //   if (playCount >= 5) {  // Limit of 5 plays
+  //     handlePause();  // Pause the current track
+  //     handleTimeLimit();  // Trigger the modal to ask for continuation
   //   }
   // };
 
@@ -185,30 +196,13 @@ export default function Home() {
     setIsSoundPlaying(false);
   };
 
+
+  
+
   
 
 
-  // const getCategoryIDByName = async (categoryName) => {
-  //   const response = await fetch('https://develop.dailyoperation.uk/streaming/wp-json/wp/v2/categories');
-  //   if (!response.ok) {
-  //     throw new Error('Failed to fetch categories');
-  //   }
-  //   const categories = await response.json();
-  //   const category = categories.find(cat => cat.name.toLowerCase() === categoryName.toLowerCase());
-  //   return category ? category.id : null;
-  // };
-
   
-  // const fetchPostsByCategory = async (categoryID) => {
-  //   const response = await fetch(`https://develop.dailyoperation.uk/streaming/wp-json/wp/v2/posts?categories=${categoryID}&_embed`, {
-  //     method: 'GET',
-  //   });
-  //   if (!response.ok) {
-  //     throw new Error('Network response was not ok');
-  //   }
-  //   const posts = await response.json();
-  //   return posts;
-  // };
   
 
   
@@ -217,6 +211,8 @@ export default function Home() {
   
     
   return (<>
+
+{/* Open the modal using document.getElementById('ID').showModal() method */}
 
 <dialog id="my_modal_8" className="modal">
   <div className="modal-box">
@@ -230,90 +226,26 @@ export default function Home() {
     </div>
   </div>
 </dialog>
-
   
-
-
   <div>
-
-
 
 
    <div className='flex'>
 <h1 className=' text-3xl pt-2 pl-4 font-semibold text-[#EAD8B1]'>Daily Operation</h1> 
+
+
   
 
 <div className="ml-10 ">
 
    {/* Open the modal using document.getElementById('ID').showModal() method */}
-   <button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaHome /></button>
+   <a href="./"><button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaHome /></button></a>
 
 </div>
 
-   {/* Open the modal using document.getElementById('ID').showModal() method */}
-   <button className="hidden sm:block btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_2').showModal()}><FaList /></button>
-<dialog id="my_modal_2" className="modal">
-  <div className="modal-box hidden sm:block">
-    <h3 className="font-bold text-lg">Playlist</h3>
-    <p className="py-4">Playlist in development.</p>
-    <div className="modal-action">
-      <form method="dialog">
-        {/* if there is a button in form, it will close the modal */}
-        <button className="btn">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
+   
 
-<a href="./faq"><div className="mt-3 ml-2 text-gray-500 text-base">FAQ</div></a>
-
- {/* Open the modal using document.getElementById('ID').showModal() method */}
- <button className="btn hidden sm:block text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_3').showModal()}><CiSearch/></button>
-<dialog id="my_modal_3" className="modal">
-  <div className="modal-box">
-    <h3 className="font-bold text-lg">Search</h3>
-    <p className="py-4">Search feature in development.</p>
-    <div className="modal-action">
-      <form method="dialog">
-        {/* if there is a button in form, it will close the modal */}
-        <button className="btn">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
-
- {/* Open the modal using document.getElementById('ID').showModal() method */}
- <button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_4').showModal()}><CiCircleInfo /></button>
-<dialog id="my_modal_4" className="modal">
-  <div className="modal-box">
-    <h3 className="font-bold text-lg">Info</h3>
-    <div>
-    <p>
-    Welcome to the ultimate destination for Lo-Fi Boom Bap Beats! Our platform is a haven for those who crave smooth, soulful rhythms fused with the raw, gritty essence of boom bap. Inspired by classic hip-hop and the chilled vibes of lo-fi, we bring you a curated selection of instrumentals perfect for relaxation, studying, creative projects, or simply vibing out. Our collection blends the timeless, drum-heavy patterns of boom bap with the laid-back, nostalgic atmosphere of lo-fi music. Whether you&#39;re an artist looking for the perfect background track or a listener who enjoys mellow beats with that old-school hip-hop feel, our platform has something for everyone. Tune in to experience seamless playlists, handpicked by experts, designed to help you focus, unwind, or find inspiration in the grooves of soulful samples and dusty drums.
-</p>
-</div>
-
-<p>Features include:</p>
-
-<ul>
-  <li>High-Quality Playlists: Carefully curated Lo-Fi Boom Bap mixes, updated regularly to ensure a fresh and consistent vibe.</li>
-  <li>No Interruptions: Ad-free, non-stop listening for uninterrupted chill sessions.</li>
-  <li>Perfect for All Occasions: From background ambiance to focus music or beat-making inspiration, our platform provides the soundtrack for your day.</li>
-  <li>Support for Creators: Access beats for personal projects, podcasts, or videos, while supporting independent beatmakers.</li>
-</ul>
-
-<p>
-  Immerse yourself in the world of laid-back rhythms and old-school textures with our exclusive Lo-Fi Boom Bap Beats. Let the beats take over!
-</p>
-    <div className="modal-action">
-      <form method="dialog">
-        {/* if there is a button in form, it will close the modal */}
-        <button className="btn">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
-
+ 
 
 
 
@@ -324,6 +256,12 @@ export default function Home() {
 
 
 <h2 className='pl-4   text-gray-400'>Lo-fi Boom Bap Focus Beats</h2>
+{/* <h2 className="text-white">{playCount}</h2>
+<button className="text-white" onClick={handlePause}>LIMIT</button> */}
+
+
+
+
 
 
 
@@ -438,6 +376,8 @@ export default function Home() {
 </div>
 
 </div>
+
+<div className='text-center text-gray-400'>{errorMessage}</div>
 <div className='mx-auto'>
 
 
@@ -463,7 +403,7 @@ export default function Home() {
     <div className="card-actions justify-end">
     
 
-      {isSoundPlaying ? <button onClick={handleStop} ><CiPause1 /></button> : <button onClick={reStart}><FaPlay /></button>}
+      {startedSelection && isSoundPlaying ? <button onClick={handleStop} ><CiPause1 /></button> : <button onClick={reStart} ><FaPlay /></button>}
       
     </div>
   </div>
@@ -552,7 +492,7 @@ export default function Home() {
 
  <footer className="footer bg-neutral text-neutral-content p-10">
  <div className=''>
-        <div className="text-xs">
+        <div class="text-xs">
           <strong className="block font-bold text-lg text-gray-400 font-medium">Daily Operation</strong>
           <a href="https://dailyoperation.uk">
           <p>Lo-fi Boom Bap Focus Beats</p>
