@@ -113,7 +113,7 @@ useEffect(() => {
       
     }
     
-    setPlayCount(playCount + 1);
+    setPlayCount(prevCount => prevCount + 1);
     // checkPlayCount();
     if (playCount < playLimitNum) {
     
@@ -139,10 +139,26 @@ useEffect(() => {
 
 
   const handleNextTrack = () => {
-    const nextTrack = artistDataWP[Math.floor(Math.random() * artistDataWP.length)];
-    setPlaying(nextTrack);
-    handlePlay(nextTrack);
-  };
+    setPlayCount(prevCount => {
+        Howler.unload();
+        const newCount = prevCount + 1;
+        
+        // Check the new playCount value after incrementing
+        if (newCount >= playLimitNum) {
+            handleTimeLimit();
+            return newCount; // Return the updated count
+        }
+
+        // Get the next track from the list if limit is not reached
+        const nextTrack = artistDataWP[Math.floor(Math.random() * artistDataWP.length)];
+
+        // Update the current track and play it
+        setPlaying(nextTrack);
+        handlePlay(nextTrack);
+
+        return newCount; // Ensure the count is returned correctly
+    });
+};
 
   const handleStop = () => {
 
@@ -181,6 +197,7 @@ useEffect(() => {
     // Pause the music and show modal
     console.log("Pausing music as play limit reached.");
     handlePause();  // Stops all active sounds
+    // handleNextTrack();
     document.getElementById('my_modal_8').showModal(); // Display the modal
   };
   
@@ -192,8 +209,9 @@ useEffect(() => {
   // };
 
   const resetPlayCount = () => {
+    
     setPlayCount(0);
-    setIsSoundPlaying(false);
+    // setIsSoundPlaying(false);
   };
 
 
@@ -302,7 +320,8 @@ useEffect(() => {
 <div>
 
   {/* Open the modal using document.getElementById('ID').showModal() method */}
-<button className="btn bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaList />Playlist</button>
+  <a href="./artists" className="btn bg-slate-900 text-gray-500 border-slate-900" ><FaList />Artists</a>
+{/* <button className="btn bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaList />Playlist</button> */}
 <dialog id="my_modal_1" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Hello!</h3>
