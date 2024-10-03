@@ -112,42 +112,56 @@ export default function Home() {
   const handlePlay = (track) => {
     if (currentSound) {
       currentSound.stop();
-      // checkPlayCount();
-      
+      setPlayCount(prevCount => prevCount + 1);  // Use functional setState
     }
-
-    setPlayCount(playCount + 1);
+  
     if (playCount < playLimitNum) {
-
-    const trackId = track.id;
-    const newTrackPath = `https://develop.dailyoperation.uk/audio/track${trackId}.mp3`;
-    console.log(newTrackPath);
-    setTrackPath(newTrackPath);
-    
-
-    const sound = new Howl({
-      src: [newTrackPath],
-      html5: true,
-      onend: handleNextTrack
-    });
-    
-    setCurrentSound(sound);
-    setIsSoundPlaying(true);
-    sound.play();
-  } else {
-    handleTimeLimit();
-  }
+      const trackId = track.id;
+      const newTrackPath = `https://develop.dailyoperation.uk/audio/track${trackId}.mp3`;
+      const sound = new Howl({
+        src: [newTrackPath],
+        html5: true,
+        onend: handleNextTrack
+      });
+      
+      setCurrentSound(sound);
+      setIsSoundPlaying(true);
+      sound.play();
+    } else {
+      handleTimeLimit();
+    }
   };
+  
 
   const handleNextTrack = () => {
-    const nextTrack = artistDataWP[Math.floor(Math.random() * artistDataWP.length)];
-    setPlaying(nextTrack);
-    handlePlay(nextTrack);
-  };
+    setPlayCount(prevCount => {
+        Howler.unload();
+        const newCount = prevCount + 1;
+        
+        // Check the new playCount value after incrementing
+        if (newCount >= playLimitNum) {
+            handleTimeLimit();
+            return newCount; // Return the updated count
+        }
+
+        // Get the next track from the list if limit is not reached
+        const nextTrack = artistDataWP[Math.floor(Math.random() * artistDataWP.length)];
+
+        // Update the current track and play it
+        setPlaying(nextTrack);
+        handlePlay(nextTrack);
+
+        return newCount; // Ensure the count is returned correctly
+    });
+};
+
+
+  
+  
 
   const handleStop = () => {
 
-    currentSound.pause();
+    Howler.unload();
     setIsSoundPlaying(false);
     
   };
@@ -164,12 +178,15 @@ export default function Home() {
 
   const stopAll = () => {
     Howler.unload();
+    setIsSoundPlaying(false);
   };
 
   const handleTimeLimit = () => {
     // Pause the music and show modal
     console.log("Pausing music as play limit reached.");
-    handlePause();  // Stops all active sounds
+    handleStop();  // Stops all active sounds
+    setIsSoundPlaying(false);  // Update state to reflect pause
+    // handleNextTrack();
     document.getElementById('my_modal_8').showModal(); // Display the modal
   };
   
@@ -181,8 +198,9 @@ export default function Home() {
   // };
 
   const resetPlayCount = () => {
+    
     setPlayCount(0);
-    setIsSoundPlaying(false);
+    // setIsSoundPlaying(false);
   };
 
   
@@ -217,6 +235,8 @@ export default function Home() {
   
     
   return (<>
+
+  {/* <h2 className="text-white">{playCount}</h2> */}
 
 <dialog id="my_modal_8" className="modal">
   <div className="modal-box">
@@ -323,7 +343,9 @@ export default function Home() {
 
 
 
-<h2 className='pl-4   text-gray-400'>Lo-fi Boom Bap Focus Beats</h2>
+{/* <h2 className='pl-4   text-gray-400'>Lo-fi Boom Bap Focus Beats</h2>
+<h2 onClick={handleNextTrack} className="text-white">{playCount}</h2>  */}
+
 
 
 
@@ -363,8 +385,8 @@ export default function Home() {
       </ul>
 <div>
 
-  {/* Open the modal using document.getElementById('ID').showModal() method */}
-<button className="btn bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaList />Playlist</button>
+<a href="./artists" className="btn bg-slate-900 text-gray-500 border-slate-900" ><FaList />Artists</a>
+{/* <button className="btn bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaList />Playlist</button> */}
 <dialog id="my_modal_1" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Hello!</h3>
@@ -463,7 +485,7 @@ export default function Home() {
     <div className="card-actions justify-end">
     
 
-      {isSoundPlaying ? <button onClick={handleStop} ><CiPause1 /></button> : <button onClick={reStart}><FaPlay /></button>}
+      {isSoundPlaying ? <button onClick={handlePause} ><CiPause1 /></button> : <button onClick={reStart}><FaPlay /></button>}
       
     </div>
   </div>
