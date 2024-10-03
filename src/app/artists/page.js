@@ -129,7 +129,7 @@ export default function Home() {
 
     <p className="text-xs text-gray-200">{category.id}</p>
     <div className="card-actions justify-end">
-      <a href="https://www.youtube.com/@dailyoperationuk/videos"><button  className="btn bg-slate-200 text-xs text-gray-500">Listen On YouTube</button></a>
+    <a href={`https://dailyoperation.uk/${category.slug}`}><button  className="btn bg-slate-200 text-xs text-gray-500">Listen</button></a>
     </div>
   </div>
 </div>
