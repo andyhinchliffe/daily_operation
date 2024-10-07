@@ -37,6 +37,7 @@ export default function Home() {
   const [isSoundPlaying, setIsSoundPlaying] = useState(false);
   const [playCount, setPlayCount] = useState(0);
   const [playLimitNum, setPlayLimitNum] = useState(7);
+  const [cookieConsent , setCookieConsent] = useState(false);
 
   const {Howl, Howler} = require('howler');
   
@@ -227,6 +228,10 @@ export default function Home() {
   //   const posts = await response.json();
   //   return posts;
   // };
+
+  const handleAgree = () => {
+    setCookieConsent(true);
+  };
   
 
   
@@ -250,6 +255,41 @@ export default function Home() {
     </div>
   </div>
 </dialog>
+
+
+{/* ----CookieBanner---- */}
+
+{!cookieConsent ? <div role="alert" className="alert"   style={{
+      position: 'fixed',
+      bottom: '0',
+      left: '0',
+      width: '100%',
+      backgroundColor: '#f1f1f1',
+      padding: '10px',
+      textAlign: 'center',
+      zIndex: 1000, // ensures it stays above other elements
+    }}>
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    className="stroke-info h-6 w-6 shrink-0">
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+  </svg>
+  <span>This site uses cookies</span>
+  <div>
+    <button className="btn btn-sm">Deny</button>
+    <button onClick={handleAgree} className="btn btn-sm btn-primary">Accept</button>
+  </div>
+</div> : null}
+
+
+{/* ----CookieBanner---- */}
 
   
 
@@ -572,7 +612,7 @@ export default function Home() {
  }
 
 
- <footer className="footer bg-neutral text-neutral-content p-10">
+ <footer className="footer bg-neutral text-neutral-content p-10 mt-10">
  <div className=''>
         <div className="text-xs">
           <strong className="block font-bold text-lg text-gray-400 font-medium">Daily Operation</strong>
