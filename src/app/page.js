@@ -38,12 +38,13 @@ export default function Home() {
   const [playCount, setPlayCount] = useState(0);
   const [playLimitNum, setPlayLimitNum] = useState(7);
   const [cookieConsent , setCookieConsent] = useState(false);
+  const [numToLoad , setNumToLoad] = useState(16);
 
   const {Howl, Howler} = require('howler');
   
 
   useEffect(() => {
-    fetch('https://develop.dailyoperation.uk/streaming/wp-json/wp/v2/posts?_embed&per_page=16', {
+    fetch(`https://develop.dailyoperation.uk/streaming/wp-json/wp/v2/posts?_embed&per_page=${numToLoad}`, {
       method: 'GET',
     })
   .then(response => {
@@ -72,7 +73,7 @@ export default function Home() {
 
   
 
-  }, []);
+  }, [numToLoad]);
 
 
   // const fetchPost16 = () => {
@@ -231,6 +232,10 @@ export default function Home() {
 
   const handleAgree = () => {
     setCookieConsent(true);
+  };
+
+  const handleShowMore = () => {
+    setNumToLoad(numToLoad + 16);
   };
   
 
@@ -483,7 +488,7 @@ export default function Home() {
 </div>
   </div>
 
-  <div className="sticky  inset-x-0 bottom-0 ">
+  <div className="flex flex-col min-h-screen">
     <a href="#" className="flex items-center gap-2 bg-slate-900 p-4 ">
       
       
@@ -611,7 +616,9 @@ export default function Home() {
 
  }
 
-
+ <div className="flex justify-center">
+  <button className="mt-10 border-slate-700 btn-sm btn bg-slate-700 text-gray-600 hover:bg-slate-900" onClick={handleShowMore}>Load more</button>
+</div>
  <footer className="footer bg-neutral text-neutral-content p-10 mt-10">
  <div className=''>
         <div className="text-xs">
