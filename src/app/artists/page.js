@@ -86,7 +86,8 @@ export default function Home() {
 
 
 
-<h2 className='pl-4   text-gray-400'>Lo-fi Boom Bap Focus Beats</h2>
+<h2 className=" ml-4 text-gray-400 text-xs">Lo-Fi Boom Bap Beats</h2>
+{/* <div className=" ml-4 text-gray-400 font-semibold text-sm">Beta Version</div> */}
 
 
     

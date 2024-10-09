@@ -311,7 +311,7 @@ export default function Home() {
 <div className="ml-10 ">
 
    {/* Open the modal using document.getElementById('ID').showModal() method */}
-   <button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaHome /></button>
+   <button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" ><FaHome /></button>
 
 </div>
 
@@ -404,9 +404,12 @@ export default function Home() {
 
 <div className="flex  md:columns-2 ">
 
-<div className='hidden w-32 lg:block'>
+<div className='hidden w-36 lg:block'>
 
-<div className=" ml-4 text-gray-400 text-xs">Beta Version</div>
+
+<h2 className=" ml-4 text-gray-400 text-xs">Lo-Fi Boom Bap Beats</h2>
+
+<div className=" ml-4 text-gray-400 font-semibold text-sm">Beta Version</div>
 
 
 
