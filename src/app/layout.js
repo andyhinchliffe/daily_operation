@@ -34,7 +34,7 @@ export const metadata = {
     ],
     twitter: {
     card: "summary_large_image",
-    title: "Daily Operation - Lo-Fi Boom Bap Hip Hop beats music platform",
+    title: "Daily Operation - The Lo-fi Boom Bap Beats Music Platform",
     description:
       "Explore top-quality Lo-Fi Boom Bap Hip Hop beats on our platform. Perfect for studying, relaxing, and creative projects.",
     creator: "@dailyoperationuk",

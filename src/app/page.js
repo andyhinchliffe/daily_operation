@@ -403,15 +403,18 @@ export default function Home() {
   
 
 <div className="flex  md:columns-2 ">
+
 <div className='hidden w-32 lg:block'>
+
+<div className=" ml-4 text-gray-400 text-xs">Beta Version</div>
 
 
 
 
 <div className="flex h-screen flex-col justify-between  bg-slate-900">
-  <div className="px-2 py-6">
+  <div className="px-2">
     
-
+  
     <ul className="mt-6 space-y-1">
       <li>
         <a
@@ -488,20 +491,18 @@ export default function Home() {
 </div>
   </div>
 
-  <div className="flex flex-col min-h-screen">
-    <a href="#" className="flex items-center gap-2 bg-slate-900 p-4 ">
+  {/* <div className="flex flex-col min-h-screen ">
+    <a href="https://dailyoperation.uk/" className="mt-20flex items-center gap-2 bg-slate-900 p-4  bottom-0">
       
       
       <div className='bg-slate-900'>
-        <p class="text-xs">
-          <strong className="block text-gray-400 font-medium">Daily Operation</strong>
-          <a href="https://develop.dailyoperation.uk">
-          <span className="text-gray-400" > dailyoperation.uk </span>
-          </a>
+        <p class="text-xs ">
+          <strong className="block text-gray-400 font-medium">The Lo-fi Boom Bap Beats Music Platform</strong>
+          
         </p>
       </div>
     </a>
-  </div>
+  </div> */}
 </div>
 
 </div>
@@ -624,7 +625,7 @@ export default function Home() {
         <div className="text-xs">
           <strong className="block font-bold text-lg text-gray-400 font-medium">Daily Operation</strong>
           <a href="https://dailyoperation.uk">
-          <p>Lo-fi Boom Bap Focus Beats</p>
+          <p>The Lo-fi Boom Bap Beats Music Platform</p>
           <p className="text-xstext-base" > dailyoperation.uk </p>
           </a>
         </div>
