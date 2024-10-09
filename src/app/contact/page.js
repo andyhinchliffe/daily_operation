@@ -44,7 +44,7 @@ const page = () => {
       <h2 className="card-title mb-10 text-2xl">Contact</h2>
       
       <div className="card-actions">
-        <a href="mailto:info@dailyoperation.uk"><button className="btn btn-primary">Open</button></a>
+        <a href="mailto:dailyoperation1979@gmail.com"><button className="btn btn-primary">Open</button></a>
       </div>
     </div>
   </div>
