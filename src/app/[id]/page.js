@@ -249,7 +249,7 @@ useEffect(() => {
 
 
    <div className='flex'>
-<h1 className=' text-3xl pt-2 pl-4 font-semibold text-[#EAD8B1]'>Daily Operation</h1> 
+<h1 className=' text-3xl pt-2 pl-4 font-semibold text-[#eb761d]'>Daily Operation</h1> 
 
 
   
@@ -257,7 +257,7 @@ useEffect(() => {
 <div className="ml-10 ">
 
    {/* Open the modal using document.getElementById('ID').showModal() method */}
-   <a href="./"><button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaHome /></button></a>
+   <a href="./"><button className="btn text-2xl bg-[#2f2927] text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-[#2f2927] border-0 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaHome /></button></a>
 
 </div>
 
@@ -273,7 +273,7 @@ useEffect(() => {
 
 
 
-<h2 className=" ml-4 text-gray-400 text-xs">Lo-Fi Boom Bap Beats</h2>
+<h2 className=" ml-4 text-[#ceb8ae] text-xs">Lo-Fi Boom Bap Beats</h2>
 {/* <h2 className="text-white">{playCount}</h2>
 <button className="text-white" onClick={handlePause}>LIMIT</button> */}
 
@@ -292,12 +292,12 @@ useEffect(() => {
   
 
 <div className="flex  md:columns-2 ">
-<div className='hidden w-32 lg:block'>
+<div className='hidden  w-32 lg:block'>
 
 
 
 
-<div className="flex h-screen flex-col justify-between  bg-slate-900">
+<div className="flex h-screen flex-col justify-between  bg-[#2f2927]">
   <div className="px-2 py-6">
     
 
@@ -305,8 +305,8 @@ useEffect(() => {
       <li>
         <a
           href="./"
-          className="block rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-gray-700"
-        ><div className='flex gap-2'><FaHome />Home</div>
+          className="block rounded-lg bg-[#2f2927] text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d]   px-4 py-4 text-sm font-medium "
+        ><div className='flex gap-2'><FaHome className="mt-1" />Home</div>
           
         </a>
       </li>
@@ -320,7 +320,7 @@ useEffect(() => {
 <div>
 
   {/* Open the modal using document.getElementById('ID').showModal() method */}
-  <a href="./artists" className="btn bg-slate-900 text-gray-500 border-slate-900" ><FaList />Artists</a>
+  <a href="./artists" className="btn bg-[#2f2927] text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0" ><FaList />Artists</a>
 {/* <button className="btn bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaList />Playlist</button> */}
 
 </div>
@@ -328,7 +328,7 @@ useEffect(() => {
 
       
       {/* Open the modal using document.getElementById('ID').showModal() method */}
-<button className="btn bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><CiSearch />Search</button>
+<button className="btn bg-[#2f2927] text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0" onClick={()=>document.getElementById('my_modal_1').showModal()}><CiSearch />Search</button>
 <dialog id="my_modal_1" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Info</h3>
@@ -350,7 +350,7 @@ useEffect(() => {
 
 <div>    
           {/* Open the modal using document.getElementById('ID').showModal() method */}
-<button className="btn bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><CiCircleInfo />Info</button>
+<button className="btn bg-[#2f2927] text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0" onClick={()=>document.getElementById('my_modal_1').showModal()}><CiCircleInfo />Info</button>
 <dialog id="my_modal_1" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Info</h3>
@@ -368,14 +368,14 @@ useEffect(() => {
   </div>
 
   <div className="sticky  inset-x-0 bottom-0 ">
-    <a href="#" className="flex items-center gap-2 bg-slate-900 p-4 ">
+    <a href="#" className="flex items-center gap-2 bg-[#2f2927] p-4 ">
       
       
-      <div className='bg-slate-900'>
+      <div className='bg-[#2f2927]'>
         <p class="text-xs">
-          <strong className="block text-gray-400 font-medium">Daily Operation</strong>
+          <strong className="block text-[#eb761d] font-medium">Daily Operation</strong>
           <a href="https://develop.dailyoperation.uk">
-          <span className="text-gray-400" > dailyoperation.uk </span>
+          <span className="text-[#ceb8ae]" > dailyoperation.uk </span>
           </a>
         </p>
       </div>
@@ -419,7 +419,7 @@ useEffect(() => {
 )}
   
 {!startedSelection && ( 
-      <div className="flex h-44 m-6 w-72 md:w-96 bg-slate-500 lg:card-side shadow-xl rounded rounded-xl">
+      <div className="flex h-44 m-6 w-72 md:w-96 bg-[#745c4d] lg:card-side shadow-xl rounded rounded-xl">
    
   <figure>
     <img className="rounded-lg w-44 h-44"
@@ -430,9 +430,9 @@ useEffect(() => {
 
   
   
-  <div className=" pl-4 card-body bg-slate-500 rounded-xl">
-  <h2 className="card-title">Select a track</h2>
-  <p className='text-xs '>Click any track below to load</p>
+  <div className=" pl-4 card-body bg-[#745c4d] rounded-xl">
+  <h2 className="card-title text-[#ceb8ae]">Select a track</h2>
+  <p className='text-xs text-[#ceb8ae] '>Click any track below to load</p>
     
                 
     <div className="card-actions justify-end">
@@ -451,12 +451,12 @@ useEffect(() => {
     <p className='text-3xl font-semibold text-gray-400'>{artistDisplay}</p>
     
   )} */}
-    <div className="mx-6 pt-10 bg-slate-900 grid flex flex-wrap grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+    <div className="mx-6 pt-10 bg-[#2f2927] grid flex flex-wrap grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
           {artistDataWP.map(post => (
             <div key={post.id}>
             
-            <Image onClick={() => handlePostClick(post)}  className='rounded-lg hover:cursor-pointer shadow-lg' src={post._embedded?.['wp:featuredmedia']?.[0]?.source_url} alt={post._embedded?.['wp:featuredmedia']?.[0]?.alt_text} width={150} height={150}/>
-              <h2 className="text-slate-200">{post.title.rendered}</h2>
+            <Image onClick={() => handlePostClick(post)}  className='rounded-lg hover:cursor-pointer shadow-lg hover:scale-105' src={post._embedded?.['wp:featuredmedia']?.[0]?.source_url} alt={post._embedded?.['wp:featuredmedia']?.[0]?.alt_text} width={150} height={150}/>
+              <h2 className="text-[#eb761d]">{post.title.rendered}</h2>
 
               <a href={`./${post._embedded['wp:term'][0].map(term => (
                   term.taxonomy === 'category' ? term.slug : ''
@@ -464,7 +464,7 @@ useEffect(() => {
               <p onClick={() => setArtistDisplay(post._embedded['wp:term'][0].map(term => (
                   term.taxonomy === 'category' ? term.name : ''
                 )).filter(Boolean).join(', ')) 
-                } className="text-slate-200 font-base text-sm">
+                } className="text-[#ceb8ae] font-base text-sm">
                 {post._embedded['wp:term'][0].map(term => (
                   term.taxonomy === 'category' ? term.name : ''
                 )).filter(Boolean).join(', ')}
@@ -498,31 +498,31 @@ useEffect(() => {
  }
 
 
- <footer className="footer bg-neutral text-neutral-content p-10">
- <div className=''>
-        <div class="text-xs">
-          <strong className="block font-bold text-lg text-gray-400 font-medium">Daily Operation</strong>
+ <footer className="footer bg-[#5c4d45] text-[#ceb8ae]-content p-10 mt-10">
+ <div className='text-[#ceb8ae]'>
+        <div className="text-xs">
+          <strong className="block font-bold text-lg text-[#ceb8ae] font-medium">Daily Operation</strong>
           <a href="https://dailyoperation.uk">
-          <p>Lo-fi Boom Bap Focus Beats</p>
-          <p className="text-xstext-base" > dailyoperation.uk </p>
+          <p className="text-[#ceb8ae]">The Lo-fi Boom Bap Beats Music Platform</p>
+          <p className="text-xs text-[#ceb8ae]" > dailyoperation.uk </p>
           </a>
         </div>
       </div>
 
       <div></div>
  <nav>
-    <h6 className="footer-title">Daily Operation</h6>
-    <a href="/faq" className="link link-hover">FAQ</a>
-    <a href="/contact" className="link link-hover">Contact</a>
-    <a href="https://youtube.com/@dailyoperationuk" className="link link-hover">YouTube</a>
+    <h6 className="footer-title text-[#ceb8ae]">Daily Operation</h6>
+    <a href="https://blog.dailyoperation.uk" className="link link-hover text-[#ceb8ae] ">Blog</a>
+    <a href="/contact" className="link link-hover text-[#ceb8ae] ">Contact</a>
+    <a href="https://youtube.com/@dailyoperationuk" className="link link-hover text-[#ceb8ae]">YouTube</a>
     
     
   </nav>
   <nav>
-    <h6 className="footer-title">Legal</h6>
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
+    <h6 className="footer-title text-[#ceb8ae] ">Legal</h6>
+    <a className="link link-hover text-[#ceb8ae] ">Terms of use</a>
+    <a className="link link-hover text-[#ceb8ae] ">Privacy policy</a>
+    <a href="/cookie-policy" className="link link-hover text-[#ceb8ae] ">Cookie policy</a>
     
     
   </nav>

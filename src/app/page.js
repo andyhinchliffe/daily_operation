@@ -39,6 +39,7 @@ export default function Home() {
   const [playLimitNum, setPlayLimitNum] = useState(7);
   const [cookieConsent , setCookieConsent] = useState(false);
   const [numToLoad , setNumToLoad] = useState(16);
+  const [loadscreen , setLoadscreen] = useState(true);
 
   const {Howl, Howler} = require('howler');
   
@@ -55,7 +56,7 @@ export default function Home() {
   })
   .then(data => {
     // Work with the received post data
-    setFrontPage(false);
+    // setFrontPage(false);
     setArtistDataWP(data)
     setPlaying(data[3])
     const trackId = data[3].id;
@@ -288,8 +289,10 @@ export default function Home() {
   </svg>
   <span>This site uses cookies</span>
   <div>
+  <a href="./cookie-policy">
     <button className="btn btn-sm">Deny</button>
-    <button onClick={handleAgree} className="btn btn-sm btn-primary">Accept</button>
+    </a>
+    <button onClick={handleAgree} className="btn btn-sm bg-[#eb761d] text-[#2f2927]">Accept</button>
   </div>
 </div> : null}
 
@@ -305,18 +308,18 @@ export default function Home() {
 
 
    <div className='flex'>
-<h1 className=' text-3xl pt-2 pl-4 font-semibold text-[#EAD8B1]'>Daily Operation</h1> 
+<h1 className=' text-3xl pt-2 pl-4 font-semibold text-[#eb761d]'>Daily Operation</h1> 
   
 
 <div className="ml-10 ">
 
    {/* Open the modal using document.getElementById('ID').showModal() method */}
-   <button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" ><FaHome /></button>
+   <button className="btn text-2xl text-[#eb761d] bg-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d] border-[#2f2927]" ><FaHome /></button>
 
 </div>
 
    {/* Open the modal using document.getElementById('ID').showModal() method */}
-   <button className="hidden sm:block btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_2').showModal()}><FaList /></button>
+   <button className="hidden sm:block btn text-2xl bg-[#2f2927] text-[#eb761d] border-[#2f2927] text-[#eb761d] bg-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d] border-[#2f2927]" onClick={()=>document.getElementById('my_modal_2').showModal()}><FaList /></button>
 <dialog id="my_modal_2" className="modal">
   <div className="modal-box hidden sm:block">
     <h3 className="font-bold text-lg">Playlist</h3>
@@ -330,10 +333,10 @@ export default function Home() {
   </div>
 </dialog>
 
-<a href="./faq"><div className="mt-3 ml-2 text-gray-500 text-base">FAQ</div></a>
+<a href="https://info.dailyoperation.uk"><div className=" ml-2 text-[#ceb8ae] font-semibold text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] p-3 rounded rounded-xl">Blog</div></a>
 
  {/* Open the modal using document.getElementById('ID').showModal() method */}
- <button className="btn hidden sm:block text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_3').showModal()}><CiSearch/></button>
+ <button className="btn hidden sm:block text-2xl text-[#eb761d] bg-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d] border-[#2f2927]" onClick={()=>document.getElementById('my_modal_3').showModal()}><CiSearch/></button>
 <dialog id="my_modal_3" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Search</h3>
@@ -348,28 +351,32 @@ export default function Home() {
 </dialog>
 
  {/* Open the modal using document.getElementById('ID').showModal() method */}
- <button className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_4').showModal()}><CiCircleInfo /></button>
+ <button className="btn text-2xl text-[#eb761d] bg-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d] border-[#2f2927] " onClick={()=>document.getElementById('my_modal_4').showModal()}><CiCircleInfo /></button>
 <dialog id="my_modal_4" className="modal">
   <div className="modal-box">
-    <h3 className="font-bold text-lg">Info</h3>
+    <h3 className="font-bold text-lg ">Info</h3>
     <div>
-    <p>
+    <p className="mb-4">
     Welcome to the ultimate destination for Lo-Fi Boom Bap Beats! Our platform is a haven for those who crave smooth, soulful rhythms fused with the raw, gritty essence of boom bap. Inspired by classic hip-hop and the chilled vibes of lo-fi, we bring you a curated selection of instrumentals perfect for relaxation, studying, creative projects, or simply vibing out. Our collection blends the timeless, drum-heavy patterns of boom bap with the laid-back, nostalgic atmosphere of lo-fi music. Whether you&#39;re an artist looking for the perfect background track or a listener who enjoys mellow beats with that old-school hip-hop feel, our platform has something for everyone. Tune in to experience seamless playlists, handpicked by experts, designed to help you focus, unwind, or find inspiration in the grooves of soulful samples and dusty drums.
 </p>
+
 </div>
 
-<p>Features include:</p>
+<p className="font-bold">Features include:</p>
 
-<ul>
-  <li>High-Quality Playlists: Carefully curated Lo-Fi Boom Bap mixes, updated regularly to ensure a fresh and consistent vibe.</li>
-  <li>No Interruptions: Ad-free, non-stop listening for uninterrupted chill sessions.</li>
-  <li>Perfect for All Occasions: From background ambiance to focus music or beat-making inspiration, our platform provides the soundtrack for your day.</li>
-  <li>Support for Creators: Access beats for personal projects, podcasts, or videos, while supporting independent beatmakers.</li>
+<ul className="mb-4">
+  <li className="mb-4">Hig h-Quality Playlists: Carefully curated Lo-Fi Boom Bap mixes, updated regularly to ensure a fresh and consistent vibe.</li>
+  <li className="mb-4">No Interruptions: Ad-free, non-stop listening for uninterrupted chill sessions.</li>
+  <li className="mb-4">Perfect for All Occasions: From background ambiance to focus music or beat-making inspiration, our platform provides the soundtrack for your day.</li>
+  <li className="mb-4">Support for Creators: Access beats for personal projects, podcasts, or videos, while supporting independent beatmakers.</li>
 </ul>
 
-<p>
+<p className="mb-4">
   Immerse yourself in the world of laid-back rhythms and old-school textures with our exclusive Lo-Fi Boom Bap Beats. Let the beats take over!
 </p>
+<a href="./faq">
+<div className="font-bold " >Click for our FAQ</div>
+</a>
     <div className="modal-action">
       <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
@@ -399,7 +406,28 @@ export default function Home() {
 
 
 </div>
- {frontPage ?  <div className='flex justify-center text-white h-screen'><span className="loading text-white loading-ring loading-lg"></span> </div> : 
+ {frontPage ?  <div className='flex justify-center  text-white h-screen'>
+ 
+ <div className="card bg-black image-full w-96 shadow-xl w-96 h-56 mt-16 ">
+  <figure >
+    <img
+      style={{
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+    }}
+      src="https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?q=80&w=2013&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Shoes" />
+  </figure>
+  <div className="card-body ">
+    <h2 className="card-title text-[#ceb8ae]">The Platform For</h2>
+    
+    <p className="text-[#ceb8ae]">Lo Fi Boom Bap Beats</p>
+    <div className="card-actions justify-end">
+      <button className="btn bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e] " onClick={() => setFrontPage(false)}>Enter</button>
+    </div>
+  </div>
+</div></div> : 
   
 
 <div className="flex  md:columns-2 ">
@@ -407,14 +435,14 @@ export default function Home() {
 <div className='hidden w-36 lg:block'>
 
 
-<h2 className=" ml-4 text-gray-400 text-xs">Lo-Fi Boom Bap Beats</h2>
+<h2 className=" ml-4 text-[#ceb8ae] text-xs">Lo-Fi Boom Bap Beats</h2>
 
-<div className=" ml-4 text-gray-400 font-semibold text-sm">Beta Version</div>
-
-
+<div className=" ml-4 text-[#ceb8ae] font-semibold text-sm">Beta Version</div>
 
 
-<div className="flex h-screen flex-col justify-between  bg-slate-900">
+
+
+<div className="flex h-screen flex-col justify-between  bg-[#2f2927]">
   <div className="px-2">
     
   
@@ -422,7 +450,7 @@ export default function Home() {
       <li>
         <a
           href="./"
-          className="block rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-gray-700"
+          className="block rounded-lg bg-[#2f2927]  px-4 py-4 text-sm font-medium text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d]"
         ><div className='flex gap-2'><FaHome />Home</div>
           
         </a>
@@ -436,7 +464,7 @@ export default function Home() {
       </ul>
 <div>
 
-<a href="./artists" className="btn bg-slate-900 text-gray-500 border-slate-900" ><FaList />Artists</a>
+<a href="./artists" className="btn bg-[#2f2927] text-[#eb761d] border-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d]" ><FaList />Artists</a>
 {/* <button className="btn bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaList />Playlist</button> */}
 
 </div>
@@ -444,7 +472,7 @@ export default function Home() {
 
       
       {/* Open the modal using document.getElementById('ID').showModal() method */}
-<button className="btn bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_9').showModal()}><CiSearch />Search</button>
+<button className="btn bg-[#2f2927] border-[#2f2927] text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d]" onClick={()=>document.getElementById('my_modal_9').showModal()}><CiSearch />Search</button>
 <dialog id="my_modal_9" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Search</h3>
@@ -491,7 +519,7 @@ export default function Home() {
 
 
 {startedSelection && (
-      <div className="flex  h-44 m-6 w-72 md:w-96 bg-slate-500 lg:card-side shadow-xl rounded rounded-xl">
+      <div className="flex  h-44 m-6 w-72 md:w-96 bg-[#987d6e] lg:card-side shadow-xl rounded rounded-xl">
    
   <figure>
     <img className="rounded-lg w-44 h-44"
@@ -502,9 +530,9 @@ export default function Home() {
 
   
   
-  <div className="mx-auto  card-body bg-slate-500 rounded-xl">
-  <h2 className="card-title">{playing.title.rendered}</h2>
-    <p>{playing._embedded['wp:term'][0].map(term => (
+  <div className="mx-auto  card-body bg-[#987d6e] rounded-xl">
+  <h2 className="card-title text-[#eb761d]">{playing.title.rendered}</h2>
+    <p className='text-[#ceb8ae]'>{playing._embedded['wp:term'][0].map(term => (
                   term.taxonomy === 'category' ? term.name : ''
                 )).filter(Boolean).join(', ')}</p>
                 
@@ -519,7 +547,7 @@ export default function Home() {
 )}
   
 {!startedSelection && ( 
-      <div className="flex h-44 m-6 w-72 md:w-96 bg-slate-500 lg:card-side shadow-xl rounded rounded-xl">
+      <div className="flex h-44 m-6 w-72 md:w-96 bg-[#745c4d] lg:card-side shadow-xl rounded rounded-xl">
    
   <figure>
     <img className="rounded-lg w-44 h-44"
@@ -530,9 +558,9 @@ export default function Home() {
 
   
   
-  <div className=" pl-4 card-body bg-slate-500 rounded-xl">
-  <h2 className="card-title">Select a track</h2>
-  <p className='text-xs '>Click any track below to load</p>
+  <div className=" pl-4 card-body bg-[#745c4d] rounded-xl">
+  <h2 className="card-title text-[#ceb8ae]">Select a track</h2>
+  <p className='text-xs text-[#ceb8ae] '>Click any track below to load</p>
     
                 
     <div className="card-actions justify-end">
@@ -551,12 +579,12 @@ export default function Home() {
     <p className='text-3xl font-semibold text-gray-400'>{artistDisplay}</p>
     
   )} */}
-    <div className="mx-6 pt-10 bg-slate-900 grid flex flex-wrap grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+    <div className="mx-6 pt-10 bg-[#2f2927] grid flex flex-wrap grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
           {artistDataWP.map(post => (
             <div key={post.id}>
             
-            <Image onClick={() => handlePostClick(post)}  className='rounded-lg hover:cursor-pointer shadow-lg' src={post._embedded?.['wp:featuredmedia']?.[0]?.source_url} alt={post._embedded?.['wp:featuredmedia']?.[0]?.alt_text} width={150} height={150}/>
-              <h2 className="text-slate-200">{post.title.rendered}</h2>
+            <Image onClick={() => handlePostClick(post)}  className='rounded-lg hover:cursor-pointer shadow-lg hover:scale-105 duration-300' src={post._embedded?.['wp:featuredmedia']?.[0]?.source_url} alt={post._embedded?.['wp:featuredmedia']?.[0]?.alt_text} width={150} height={150}/>
+              <h2 className="text-[#eb761d]">{post.title.rendered}</h2>
 
               <a href={`./${post._embedded['wp:term'][0].map(term => (
                   term.taxonomy === 'category' ? term.slug : ''
@@ -564,7 +592,7 @@ export default function Home() {
               <p onClick={() => setArtistDisplay(post._embedded['wp:term'][0].map(term => (
                   term.taxonomy === 'category' ? term.name : ''
                 )).filter(Boolean).join(', ')) 
-                } className="text-slate-200 font-base text-sm">
+                } className="text-[#ceb8ae] font-base hover:font-semibold text-sm">
                 {post._embedded['wp:term'][0].map(term => (
                   term.taxonomy === 'category' ? term.name : ''
                 )).filter(Boolean).join(', ')}
@@ -597,34 +625,42 @@ export default function Home() {
 
  }
 
- <div className="flex justify-center">
-  <button className="mt-10 border-slate-700 btn-sm btn bg-slate-700 text-gray-600 hover:bg-slate-900" onClick={handleShowMore}>Load more</button>
-</div>
- <footer className="footer bg-neutral text-neutral-content p-10 mt-10">
- <div className=''>
+
+
+
+{/* -----More button ----- */}
+ {frontPage ?  <div></div> :<div className="flex justify-center">
+  <button className="mt-10 border-slate-700 btn-sm btn bg-[#eb761d] text-[#5c4d45] hover:bg-[#5c4d45] hover:text-[#ceb8ae]" onClick={handleShowMore}>Load more</button>
+</div>}
+
+{/* ------More Button -------- */}
+
+
+ <footer className="footer bg-[#5c4d45] text-[#ceb8ae]-content p-10 mt-10">
+ <div className='text-[#ceb8ae]'>
         <div className="text-xs">
-          <strong className="block font-bold text-lg text-gray-400 font-medium">Daily Operation</strong>
+          <strong className="block font-bold text-lg text-[#ceb8ae] font-medium">Daily Operation</strong>
           <a href="https://dailyoperation.uk">
-          <p>The Lo-fi Boom Bap Beats Music Platform</p>
-          <p className="text-xstext-base" > dailyoperation.uk </p>
+          <p className="text-[#ceb8ae]">The Lo-fi Boom Bap Beats Music Platform</p>
+          <p className="text-xs text-[#ceb8ae]" > dailyoperation.uk </p>
           </a>
         </div>
       </div>
 
       <div></div>
  <nav>
-    <h6 className="footer-title">Daily Operation</h6>
-    <a href="/faq" className="link link-hover">FAQ</a>
-    <a href="/contact" className="link link-hover">Contact</a>
-    <a href="https://youtube.com/@dailyoperationuk" className="link link-hover">YouTube</a>
+    <h6 className="footer-title text-[#ceb8ae]">Daily Operation</h6>
+    <a href="https://blog.dailyoperation.uk" className="link link-hover text-[#ceb8ae] ">Blog</a>
+    <a href="/contact" className="link link-hover text-[#ceb8ae] ">Contact</a>
+    <a href="https://youtube.com/@dailyoperationuk" className="link link-hover text-[#ceb8ae]">YouTube</a>
     
     
   </nav>
   <nav>
-    <h6 className="footer-title">Legal</h6>
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
+    <h6 className="footer-title text-[#ceb8ae] ">Legal</h6>
+    <a className="link link-hover text-[#ceb8ae] ">Terms of use</a>
+    <a className="link link-hover text-[#ceb8ae] ">Privacy policy</a>
+    <a href="/cookie-policy" className="link link-hover text-[#ceb8ae]">Cookie policy</a>
     
     
   </nav>

@@ -6,13 +6,13 @@ const page = () => {
   return (<>
 
 <div className='flex'>
-<h1 className=' text-3xl pt-2 pl-4 font-semibold text-gray-400'>Daily Operation</h1> 
+<h1 className=' text-3xl pt-2 pl-4 font-semibold text-[#eb761d]'>Daily Operation</h1>  
   
 
 <div className="ml-10 ">
 
    {/* Open the modal using document.getElementById('ID').showModal() method */}
-   <a href="./"><button  className="btn text-2xl bg-slate-900 text-gray-500 border-slate-900" ><FaHome /></button></a>
+   <a href="./"><button className="btn text-2xl text-[#eb761d] bg-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d] border-[#2f2927]" ><FaHome /></button></a>
 
 </div>
 
@@ -30,52 +30,52 @@ const page = () => {
 
 
 
-<h2 className='pl-4   text-gray-400'>Lo-fi Boom Bap Focus Beats</h2>
+<h2 className=" ml-4 text-[#ceb8ae] text-xs">Lo-Fi Boom Bap Beats</h2>
  
     <div className="flex justify-center min-h-screen">
 
     
     
-    <div className="card bg-base-100 mt-20 h-64 w-96 shadow-xl">
+    <div className="card bg-[#5c4d45] mt-20 h-64 w-96 shadow-xl">
     <figure className="px-10 pt-10">
       
     </figure>
     <div className="card-body items-center text-center">
-      <h2 className="card-title mb-10 text-2xl">Contact</h2>
+      <h2 className="card-title mb-10 text-[#ceb8ae] text-2xl">Contact</h2>
       
       <div className="card-actions">
-        <a href="mailto:dailyoperation1979@gmail.com"><button className="btn btn-primary">Open Email</button></a>
+        <a href="mailto:dailyoperation1979@gmail.com"><button className="btn text-[#ceb8ae] bg-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0">Open Email</button></a>
       </div>
     </div>
   </div>
   
   </div>
 
-  <footer className="footer bg-neutral text-neutral-content p-10">
- <div className=''>
-        <div class="text-xs">
-          <strong className="block font-bold text-lg text-gray-400 font-medium">Daily Operation</strong>
+  <footer className="footer bg-[#5c4d45] text-[#ceb8ae]-content p-10 mt-10">
+ <div className='text-[#ceb8ae]'>
+        <div className="text-xs">
+          <strong className="block font-bold text-lg text-[#ceb8ae] font-medium">Daily Operation</strong>
           <a href="https://dailyoperation.uk">
-          <p>Lo-fi Boom Bap Focus Beats</p>
-          <p className="text-xstext-base" > dailyoperation.uk </p>
+          <p className="text-[#ceb8ae]">The Lo-fi Boom Bap Beats Music Platform</p>
+          <p className="text-xs text-[#ceb8ae]" > dailyoperation.uk </p>
           </a>
         </div>
       </div>
 
       <div></div>
  <nav>
-    <h6 className="footer-title">Daily Operation</h6>
-    <a href="/faq" className="link link-hover">FAQ</a>
-    <a href="/contact" className="link link-hover">Contact</a>
-    <a href="https://youtube.com/@dailyoperationuk" className="link link-hover">YouTube</a>
+    <h6 className="footer-title text-[#ceb8ae]">Daily Operation</h6>
+    <a href="https://blog.dailyoperation.uk" className="link link-hover text-[#ceb8ae] ">Blog</a>
+    <a href="/contact" className="link link-hover text-[#ceb8ae] ">Contact</a>
+    <a href="https://youtube.com/@dailyoperationuk" className="link link-hover text-[#ceb8ae]">YouTube</a>
     
     
   </nav>
   <nav>
-    <h6 className="footer-title">Legal</h6>
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
+    <h6 className="footer-title text-[#ceb8ae] ">Legal</h6>
+    <a className="link link-hover text-[#ceb8ae] ">Terms of use</a>
+    <a className="link link-hover text-[#ceb8ae] ">Privacy policy</a>
+    <a href="/cookie-policy" className="link link-hover text-[#ceb8ae] ">Cookie policy</a>
     
     
   </nav>
