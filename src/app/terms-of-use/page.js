@@ -84,7 +84,7 @@ Welcome to DailyOperation.uk, the go-to destination for high-quality, curated lo
 ### 5. **User Conduct**
    You agree not to:
    - Upload or share content that infringes on third-party rights, including intellectual property rights.
-   - Use the platform for unlawful activities, including hacking or attempts to disrupt the platform’s functionality.
+   - Use the platform for unlawful activities, including hacking or attempts to disrupt the platform's functionality.
    - Resell, sublicense, or exploit content from DailyOperation.uk for commercial purposes without a commercial license agreement.
 
 ### 6. **Intellectual Property Rights**
