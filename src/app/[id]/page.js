@@ -520,9 +520,9 @@ useEffect(() => {
   </nav>
   <nav>
     <h6 className="footer-title text-[#ceb8ae] ">Legal</h6>
-    <a className="link link-hover text-[#ceb8ae] ">Terms of use</a>
-    <a className="link link-hover text-[#ceb8ae] ">Privacy policy</a>
-    <a href="/cookie-policy" className="link link-hover text-[#ceb8ae] ">Cookie policy</a>
+    <a href="/terms-of-use" className="link link-hover text-[#ceb8ae] ">Terms of use</a>
+    <a href="/privacy-policy" className="link link-hover text-[#ceb8ae] ">Privacy policy</a>
+    <a href="/cookie-policy" className="link link-hover text-[#ceb8ae]">Cookie policy</a>
     
     
   </nav>

@@ -31,23 +31,30 @@ const page = () => {
 
 
 <h2 className=" ml-4 text-[#ceb8ae] text-xs">Lo-Fi Boom Bap Beats</h2>
+
+
+<div
+  className="hero min-h-40 mt-20 rounded-xl mx-auto w-72"
+  style={{
+    backgroundImage: "url('https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?q=80&w=2013&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+  }}>
+  <div className="hero-overlay bg-opacity-60"></div>
+  <div className="hero-content text-neutral-content text-center">
+    <div className="max-w-md">
+      <h1 className="mb-5 text-5xl font-bold text-[#ceb8ae]">Contact</h1>
+      <p className="mb-5 text-[#ceb8ae]">
+        Get in touch with us.
+      </p>
+      <a href="mailto:dailyoperation1979@gmail.com"><button className="btn text-[#ceb8ae] bg-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0">Open Email</button></a>
+    </div>
+  </div>
+</div>
  
     <div className="flex justify-center min-h-screen">
 
     
     
-    <div className="card bg-[#5c4d45] mt-20 h-64 w-96 shadow-xl">
-    <figure className="px-10 pt-10">
-      
-    </figure>
-    <div className="card-body items-center text-center">
-      <h2 className="card-title mb-10 text-[#ceb8ae] text-2xl">Contact</h2>
-      
-      <div className="card-actions">
-        <a href="mailto:dailyoperation1979@gmail.com"><button className="btn text-[#ceb8ae] bg-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0">Open Email</button></a>
-      </div>
-    </div>
-  </div>
+    
   
   </div>
 
@@ -73,9 +80,9 @@ const page = () => {
   </nav>
   <nav>
     <h6 className="footer-title text-[#ceb8ae] ">Legal</h6>
-    <a className="link link-hover text-[#ceb8ae] ">Terms of use</a>
-    <a className="link link-hover text-[#ceb8ae] ">Privacy policy</a>
-    <a href="/cookie-policy" className="link link-hover text-[#ceb8ae] ">Cookie policy</a>
+    <a href="/terms-of-use" className="link link-hover text-[#ceb8ae] ">Terms of use</a>
+    <a href="/privacy-policy" className="link link-hover text-[#ceb8ae] ">Privacy policy</a>
+    <a href="/cookie-policy" className="link link-hover text-[#ceb8ae]">Cookie policy</a>
     
     
   </nav>
