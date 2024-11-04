@@ -471,6 +471,8 @@ export default function Home() {
 </dialog>
 </div>
 
+<div className="mt-72 text-black">{playCount}</div>
+
 
 
       
