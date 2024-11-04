@@ -40,7 +40,7 @@ const page = () => {
 
     Effective Date: [29th October 2024]_
 
-    Welcome to DailyOperation.uk, the go-to destination for high-quality, curated lo-fi boom bap beats! By accessing or using DailyOperation.uk, you agree to be bound by these Terms of Use "Terms". Please read them carefully.
+    Welcome to DailyOperation.uk, the go-to destination for high-quality, curated lo-fi boom bap beats! By accessing or using DailyOperation.uk, you agree to be bound by these Terms of Use Terms. Please read them carefully.
 
 <div className="h-2"></div>
 
@@ -67,7 +67,7 @@ DailyOperation.uk uses your information to:
 
 Provide and personalize the service, including music recommendations and content customization.
 Process transactions and manage subscriptions.
-Communicate with you, including responding to inquiries, sending updates, and sharing promotional offers if you've opted in.
+Communicate with you, including responding to inquiries, sending updates, and sharing promotional offers if you`ve opted in.
 Improve the platform by analyzing usage trends, troubleshooting issues, and optimizing functionality.
 3. Cookies and Similar Technologies
 We use cookies and similar tracking technologies to enhance your experience on DailyOperation.uk:
