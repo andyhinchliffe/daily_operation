@@ -45,7 +45,7 @@ const page = () => {
       <p className="mb-5 text-[#ceb8ae]">
         Get in touch with us.
       </p>
-      <a href="mailto:dailyoperation1979@gmail.com"><button className="btn text-[#ceb8ae] bg-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0">Open Email</button></a>
+      <a href="mailto:info@dailyoperation.uk"><button className="btn text-[#ceb8ae] bg-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0">Open Email</button></a>
     </div>
   </div>
 </div>
