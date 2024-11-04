@@ -56,7 +56,7 @@ How We Use Cookies
 
 At dailyoperation.uk, we use cookies for various purposes, including:
 
-- Analytics: We use Google Analytics to collect anonymous information about how visitors interact with our website. This helps us understand which pages are most frequently visited, the volume of visitors we receive, and the search terms and blog posts that generate the most traffic. This information is vital in allowing us to improve our site’s content and functionality to better meet the needs of our users.
+- Analytics: We use Google Analytics to collect anonymous information about how visitors interact with our website. This helps us understand which pages are most frequently visited, the volume of visitors we receive, and the search terms and blog posts that generate the most traffic. This information is vital in allowing us to improve our site's content and functionality to better meet the needs of our users.
 <div className="h-2"></div>
 Types of Cookies Used
 
