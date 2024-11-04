@@ -11,6 +11,8 @@ import { CiCircleInfo } from "react-icons/ci";
 import { CiPause1 } from "react-icons/ci";
 import { FaList } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa6";
+import CookieConsent from "react-cookie-consent";
+import { FaShuffle } from "react-icons/fa6";
 
 
 
@@ -40,6 +42,8 @@ export default function Home() {
   const [cookieConsent , setCookieConsent] = useState(false);
   const [numToLoad , setNumToLoad] = useState(16);
   const [loadscreen , setLoadscreen] = useState(true);
+  const [inShuffleMode , setInShuffleMode] = useState(false);
+  const [maxDisplayNum , setMaxDisplayNum] = useState(40);
 
   const {Howl, Howler} = require('howler');
   
@@ -231,12 +235,20 @@ export default function Home() {
   //   return posts;
   // };
 
-  const handleAgree = () => {
-    setCookieConsent(true);
-  };
+  // const handleAgree = () => {
+  //   setCookieConsent(true);
+  // };
 
   const handleShowMore = () => {
     setNumToLoad(numToLoad + 16);
+  };
+
+
+  const handleShuffleMode = () => {
+    setNumToLoad(maxDisplayNum);
+    setPlayLimitNum(75);
+    handlePostClick(artistDataWP[Math.floor(Math.random() * artistDataWP.length)]);
+    setInShuffleMode(true);
   };
   
 
@@ -252,7 +264,7 @@ export default function Home() {
 <dialog id="my_modal_8" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Hey!</h3>
-    <p className="py-4">Are you still listening? Press continiue to keep the music playing.</p>
+    <p className="py-4">Are you still listening? Press continiue to keep the music playing. Or switch to shuffle mode for longer listening listening.</p>
     <div className="modal-action">
       <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
@@ -265,36 +277,17 @@ export default function Home() {
 
 {/* ----CookieBanner---- */}
 
-{!cookieConsent ? <div role="alert" className="alert"   style={{
-      position: 'fixed',
-      bottom: '0',
-      left: '0',
-      width: '100%',
-      backgroundColor: '#f1f1f1',
-      padding: '10px',
-      textAlign: 'center',
-      zIndex: 1000, // ensures it stays above other elements
-    }}>
-
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    className="stroke-info h-6 w-6 shrink-0">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-  </svg>
-  <span>This site uses cookies</span>
-  <div>
-  <a href="./cookie-policy">
-    <button className="btn btn-sm">Deny</button>
-    </a>
-    <button onClick={handleAgree} className="btn btn-sm bg-[#eb761d] text-[#2f2927]">Accept</button>
-  </div>
-</div> : null}
+<CookieConsent
+  location="bottom"
+  buttonText="That's fine"
+  cookieName="dailyOperationCookie"
+  style={{ background: "#2B373B" }}
+  buttonStyle={{ background: "#eb761d", color: "#4e503b", fontSize: "12px", borderRadius: "5px" }}
+  expires={150}
+>
+  This website uses cookies to enhance the user experience.{" "}
+  <a href='./cookie-policy'><span style={{ fontSize: "10px" }}>Read more about our cookies policy here.</span></a>
+</CookieConsent>
 
 
 {/* ----CookieBanner---- */}
@@ -319,21 +312,12 @@ export default function Home() {
 </div>
 
    {/* Open the modal using document.getElementById('ID').showModal() method */}
-   <button className="hidden sm:block btn text-2xl bg-[#2f2927] text-[#eb761d] border-[#2f2927] text-[#eb761d] bg-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d] border-[#2f2927]" onClick={()=>document.getElementById('my_modal_2').showModal()}><FaList /></button>
-<dialog id="my_modal_2" className="modal">
-  <div className="modal-box hidden sm:block">
-    <h3 className="font-bold text-lg">Playlist</h3>
-    <p className="py-4">Playlist in development.</p>
-    <div className="modal-action">
-      <form method="dialog">
-        {/* if there is a button in form, it will close the modal */}
-        <button className="btn">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
+   <button className={`btn text-2xl ${
+    inShuffleMode ? 'bg-[#745c4d]' : 'bg-[#2f2927]'
+  } text-[#eb761d] border-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d]`} onClick={() => handleShuffleMode()}><FaShuffle /></button>
 
-<a href="https://info.dailyoperation.uk"><div className=" ml-2 text-[#ceb8ae] font-semibold text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] p-3 rounded rounded-xl">Blog</div></a>
+
+<a href="https://info.dailyoperation.uk"><div className="hidden sm:block ml-2 text-[#ceb8ae] font-semibold text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] p-3 rounded rounded-xl">Blog</div></a>
 
  {/* Open the modal using document.getElementById('ID').showModal() method */}
  <button className="btn hidden sm:block text-2xl text-[#eb761d] bg-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d] border-[#2f2927]" onClick={()=>document.getElementById('my_modal_3').showModal()}><CiSearch/></button>
@@ -408,7 +392,7 @@ export default function Home() {
 </div>
  {frontPage ?  <div className='flex justify-center  text-white h-screen'>
  
- <div className="card bg-black image-full w-96 shadow-xl w-96 h-56 mt-16 ">
+ <div className="card bg-black image-full w-72 shadow-xl w-96 h-56 mt-16 ">
   <figure >
     <img
       style={{
@@ -422,9 +406,9 @@ export default function Home() {
   <div className="card-body ">
     <h2 className="card-title text-[#ceb8ae]">The Platform For</h2>
     
-    <p className="text-[#ceb8ae]">Lo Fi Boom Bap Beats</p>
+    <p className="text-[#ceb8ae] animate-fade-up">Lo Fi Boom Bap Beats</p>
     <div className="card-actions justify-end">
-      <button className="btn bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e] " onClick={() => setFrontPage(false)}>Enter</button>
+      <button className="btn bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e] animate-fade-down animate-once animate-duration-[4000ms] animate-delay-400" onClick={() => setFrontPage(false)}>Enter</button>
     </div>
   </div>
 </div></div> : 
@@ -560,7 +544,10 @@ export default function Home() {
   
   <div className=" pl-4 card-body bg-[#745c4d] rounded-xl">
   <h2 className="card-title text-[#ceb8ae]">Select a track</h2>
-  <p className='text-xs text-[#ceb8ae] '>Click any track below to load</p>
+  <div>
+  <p className='text-xs font-bold text-[#ceb8ae] '>Click any track below to load</p>
+  <p className='text-xs text-[#ceb8ae]'>(or click on shuffle mode)</p>
+  </div>
     
                 
     <div className="card-actions justify-end">
@@ -630,7 +617,10 @@ export default function Home() {
 
 {/* -----More button ----- */}
  {frontPage ?  <div></div> :<div className="flex justify-center">
+
+  {numToLoad < maxDisplayNum && (
   <button className="mt-10 border-slate-700 btn-sm btn bg-[#eb761d] text-[#5c4d45] hover:bg-[#5c4d45] hover:text-[#ceb8ae]" onClick={handleShowMore}>Load more</button>
+)}
 </div>}
 
 {/* ------More Button -------- */}
@@ -658,8 +648,8 @@ export default function Home() {
   </nav>
   <nav>
     <h6 className="footer-title text-[#ceb8ae] ">Legal</h6>
-    <a className="link link-hover text-[#ceb8ae] ">Terms of use</a>
-    <a className="link link-hover text-[#ceb8ae] ">Privacy policy</a>
+    <a href="/terms-of-use" className="link link-hover text-[#ceb8ae] ">Terms of use</a>
+    <a href="/privacy-policy" className="link link-hover text-[#ceb8ae] ">Privacy policy</a>
     <a href="/cookie-policy" className="link link-hover text-[#ceb8ae]">Cookie policy</a>
     
     
