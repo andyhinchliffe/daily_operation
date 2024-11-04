@@ -40,7 +40,7 @@ const page = () => {
 
     Effective Date: [29th October 2024]_
 
-    Welcome to DailyOperation.uk, the go-to destination for high-quality, curated lo-fi boom bap beats! By accessing or using DailyOperation.uk, you agree to be bound by these Terms of Use ("Terms"). Please read them carefully.
+    Welcome to DailyOperation.uk, the go-to destination for high-quality, curated lo-fi boom bap beats! By accessing or using DailyOperation.uk, you agree to be bound by these Terms of Use "Terms". Please read them carefully.
 
 <div className="h-2"></div>
 
@@ -56,13 +56,13 @@ How We Use Cookies
 
 At dailyoperation.uk, we use cookies for various purposes, including:
 
-- Analytics: We use Google Analytics to collect anonymous information about how visitors interact with our website. This helps us understand which pages are most frequently visited, the volume of visitors we receive, and the search terms and blog posts that generate the most traffic. This information is vital in allowing us to improve our site’s content and functionality to better meet the needs of our users.
+- Analytics: We use Google Analytics to collect anonymous information about how visitors interact with our website. This helps us understand which pages are most frequently visited, the volume of visitors we receive, and the search terms and blog posts that generate the most traffic. This information is vital in allowing us to improve our site's content and functionality to better meet the needs of our users.
 <div className="h-2"></div>
 **Terms of Use**
 
 *Effective Date: [Date]*
 
-Welcome to DailyOperation.uk, the go-to destination for high-quality, curated lo-fi boom bap beats! By accessing or using DailyOperation.uk, you agree to be bound by these Terms of Use ("Terms"). Please read them carefully.
+Welcome to DailyOperation.uk, the go-to destination for high-quality, curated lo-fi boom bap beats! By accessing or using DailyOperation.uk, you agree to be bound by these Terms of Use "Terms". Please read them carefully.
 
 ---
 
@@ -84,7 +84,7 @@ Welcome to DailyOperation.uk, the go-to destination for high-quality, curated lo
 ### 5. **User Conduct**
    You agree not to:
    - Upload or share content that infringes on third-party rights, including intellectual property rights.
-   - Use the platform for unlawful activities, including hacking or attempts to disrupt the platform's functionality.
+   - Use the platform for unlawful activities, including hacking or attempts to disrupt the platform`s functionality.
    - Resell, sublicense, or exploit content from DailyOperation.uk for commercial purposes without a commercial license agreement.
 
 ### 6. **Intellectual Property Rights**

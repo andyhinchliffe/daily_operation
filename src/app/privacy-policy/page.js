@@ -40,7 +40,7 @@ const page = () => {
 
     Effective Date: [29th October 2024]_
 
-    Welcome to DailyOperation.uk, the go-to destination for high-quality, curated lo-fi boom bap beats! By accessing or using DailyOperation.uk, you agree to be bound by these Terms of Use ("Terms"). Please read them carefully.
+    Welcome to DailyOperation.uk, the go-to destination for high-quality, curated lo-fi boom bap beats! By accessing or using DailyOperation.uk, you agree to be bound by these Terms of Use "Terms". Please read them carefully.
 
 <div className="h-2"></div>
 
