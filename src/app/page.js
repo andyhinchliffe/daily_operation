@@ -43,7 +43,7 @@ export default function Home() {
   const [numToLoad , setNumToLoad] = useState(16);
   const [loadscreen , setLoadscreen] = useState(true);
   const [inShuffleMode , setInShuffleMode] = useState(false);
-  const [maxDisplayNum , setMaxDisplayNum] = useState(40);
+  const [maxDisplayNum , setMaxDisplayNum] = useState(70);
 
   const {Howl, Howler} = require('howler');
   
@@ -248,7 +248,7 @@ export default function Home() {
     setNumToLoad(maxDisplayNum);
     setPlayLimitNum(75);
     handlePostClick(artistDataWP[Math.floor(Math.random() * artistDataWP.length)]);
-    setInShuffleMode(true);
+    setInShuffleMode(!inShuffleMode);
   };
   
 
@@ -263,7 +263,7 @@ export default function Home() {
 
 <dialog id="my_modal_8" className="modal">
   <div className="modal-box">
-    <h3 className="font-bold text-lg">Hey!</h3>
+    <h3 className="font-bold text-lg bg-[#ceb8ae]">Hey!</h3>
     <p className="py-4">Are you still listening? Press continiue to keep the music playing. Or switch to shuffle mode for longer listening listening.</p>
     <div className="modal-action">
       <form method="dialog">
@@ -307,40 +307,40 @@ export default function Home() {
 <div className="ml-10 ">
 
    {/* Open the modal using document.getElementById('ID').showModal() method */}
-   <button className="btn text-2xl text-[#eb761d] bg-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d] border-[#2f2927]" ><FaHome /></button>
+   <button className="btn text-2xl text-[#eb761d] bg-transparent hover:bg-[#745c4d] hover:border-[#745c4d] border-transparent" ><FaHome /></button>
 
 </div>
 
    {/* Open the modal using document.getElementById('ID').showModal() method */}
    <button className={`btn text-2xl ${
-    inShuffleMode ? 'bg-[#745c4d]' : 'bg-[#2f2927]'
-  } text-[#eb761d] border-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d]`} onClick={() => handleShuffleMode()}><FaShuffle /></button>
+    inShuffleMode ? 'bg-[#745c4d]' : 'bg-transparent'
+  } text-[#eb761d] border-transparent hover:bg-[#745c4d] hover:border-transparent`} onClick={() => handleShuffleMode()}><FaShuffle /></button>
 
 
 <a href="https://info.dailyoperation.uk"><div className="hidden sm:block ml-2 text-[#ceb8ae] font-semibold text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] p-3 rounded rounded-xl">Blog</div></a>
 
  {/* Open the modal using document.getElementById('ID').showModal() method */}
- <button className="btn hidden sm:block text-2xl text-[#eb761d] bg-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d] border-[#2f2927]" onClick={()=>document.getElementById('my_modal_3').showModal()}><CiSearch/></button>
-<dialog id="my_modal_3" className="modal">
-  <div className="modal-box">
-    <h3 className="font-bold text-lg">Search</h3>
+ <button className="btn hidden sm:block text-2xl text-[#eb761d] bg-transparent hover:bg-[#745c4d] hover:border-[#745c4d] border-transparent" onClick={()=>document.getElementById('my_modal_3').showModal()}><CiSearch/></button>
+<dialog id="my_modal_3" className="modal ">
+  <div className="modal-box bg-[#ceb8ae]">
+    <h3 className="font-bold text-lg bg-[#ceb8ae]">Search</h3>
     <p className="py-4">Search feature in development.</p>
     <div className="modal-action">
       <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
-        <button className="btn">Close</button>
+        <button className="btn bg-[#eb761d] border-[#eb761d]">Close</button>
       </form>
     </div>
   </div>
 </dialog>
 
  {/* Open the modal using document.getElementById('ID').showModal() method */}
- <button className="btn text-2xl text-[#eb761d] bg-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d] border-[#2f2927] " onClick={()=>document.getElementById('my_modal_4').showModal()}><CiCircleInfo /></button>
+ <button className="btn text-2xl text-[#eb761d] bg-transparent hover:bg-[#745c4d] hover:border-[#745c4d] border-transparent " onClick={()=>document.getElementById('my_modal_4').showModal()}><CiCircleInfo /></button>
 <dialog id="my_modal_4" className="modal">
-  <div className="modal-box">
+  <div className="modal-box bg-[#ceb8ae]">
     <h3 className="font-bold text-lg ">Info</h3>
     <div>
-    <p className="mb-4">
+    <p className="mb-4 ">
     Welcome to the ultimate destination for Lo-Fi Boom Bap Beats! Our platform is a haven for those who crave smooth, soulful rhythms fused with the raw, gritty essence of boom bap. Inspired by classic hip-hop and the chilled vibes of lo-fi, we bring you a curated selection of instrumentals perfect for relaxation, studying, creative projects, or simply vibing out. Our collection blends the timeless, drum-heavy patterns of boom bap with the laid-back, nostalgic atmosphere of lo-fi music. Whether you&#39;re an artist looking for the perfect background track or a listener who enjoys mellow beats with that old-school hip-hop feel, our platform has something for everyone. Tune in to experience seamless playlists, handpicked by experts, designed to help you focus, unwind, or find inspiration in the grooves of soulful samples and dusty drums.
 </p>
 
@@ -364,7 +364,7 @@ export default function Home() {
     <div className="modal-action">
       <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
-        <button className="btn">Close</button>
+        <button className="btn bg-[#eb761d] border-[#eb761d]">Close</button>
       </form>
     </div>
   </div>
@@ -408,7 +408,9 @@ export default function Home() {
     
     <p className="text-[#ceb8ae] animate-fade-up">Lo Fi Boom Bap Beats</p>
     <div className="card-actions justify-end">
-      <button className="btn bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e] animate-fade-down animate-once animate-duration-[4000ms] animate-delay-400" onClick={() => setFrontPage(false)}>Enter</button>
+    {!isLoaded ?<span className="loading loading-ring loading-lg"></span> : <button className="btn bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" onClick={() => setFrontPage(false)}>Enter</button>}
+    
+      
     </div>
   </div>
 </div></div> : 
@@ -426,7 +428,7 @@ export default function Home() {
 
 
 
-<div className="flex h-screen flex-col justify-between  bg-[#2f2927]">
+<div className="flex h-screen flex-col justify-between  bg-transparent">
   <div className="px-2">
     
   
@@ -434,7 +436,7 @@ export default function Home() {
       <li>
         <a
           href="./"
-          className="block rounded-lg bg-[#2f2927]  px-4 py-4 text-sm font-medium text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d]"
+          className="block bg-transparent rounded-lg bg-[#2f2927]  px-4 py-4 text-sm font-medium text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d]"
         ><div className='flex gap-2'><FaHome />Home</div>
           
         </a>
@@ -448,7 +450,7 @@ export default function Home() {
       </ul>
 <div>
 
-<a href="./artists" className="btn bg-[#2f2927] text-[#eb761d] border-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d]" ><FaList />Artists</a>
+<a href="./artists" className="bg-transparent border-transparent btn bg-[#2f2927] text-[#eb761d] border-[#2f2927] hover:bg-[#745c4d] hover:border-[#745c4d]" ><FaList />Artists</a>
 {/* <button className="btn bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaList />Playlist</button> */}
 
 </div>
@@ -456,15 +458,15 @@ export default function Home() {
 
       
       {/* Open the modal using document.getElementById('ID').showModal() method */}
-<button className="btn bg-[#2f2927] border-[#2f2927] text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d]" onClick={()=>document.getElementById('my_modal_9').showModal()}><CiSearch />Search</button>
+<button className="bg-transparent border-transparent btn bg-[#2f2927] border-[#2f2927] text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d]" onClick={()=>document.getElementById('my_modal_9').showModal()}><CiSearch />Search</button>
 <dialog id="my_modal_9" className="modal">
-  <div className="modal-box">
+  <div className="modal-box bg-[#ceb8ae]">
     <h3 className="font-bold text-lg">Search</h3>
     <p className="py-4">Search feature in development</p>
     <div className="modal-action">
       <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
-        <button className="btn">Close</button>
+        <button className="btn bg-[#eb761d] border-[#eb761d]">Close</button>
       </form>
     </div>
   </div>
@@ -472,6 +474,7 @@ export default function Home() {
 </div>
 
 <div className="mt-72 text-black">{playCount}</div>
+<div className="text-black">{playLimitNum}</div>
 
 
 
@@ -568,7 +571,7 @@ export default function Home() {
     <p className='text-3xl font-semibold text-gray-400'>{artistDisplay}</p>
     
   )} */}
-    <div className="mx-6 pt-10 bg-[#2f2927] grid flex flex-wrap grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+    <div className="mx-6 pt-10 bg-transparent grid flex flex-wrap grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
           {artistDataWP.map(post => (
             <div key={post.id}>
             
