@@ -257,7 +257,7 @@ useEffect(() => {
 <div className="ml-10 ">
 
    {/* Open the modal using document.getElementById('ID').showModal() method */}
-   <a href="./"><button className="btn text-2xl bg-[#2f2927] text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-[#2f2927] border-0 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaHome /></button></a>
+   <a href="./"><button className="btn text-2xl bg-transparent text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-[#2f2927] border-0 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaHome /></button></a>
 
 </div>
 
@@ -297,7 +297,7 @@ useEffect(() => {
 
 
 
-<div className="flex h-screen flex-col justify-between  bg-[#2f2927]">
+<div className="flex h-screen flex-col justify-between  bg-transparent">
   <div className="px-2 py-6">
     
 
@@ -305,7 +305,7 @@ useEffect(() => {
       <li>
         <a
           href="./"
-          className="block rounded-lg bg-[#2f2927] text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d]   px-4 py-4 text-sm font-medium "
+          className="block rounded-lg bg-transparent text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d]   px-4 py-4 text-sm font-medium "
         ><div className='flex gap-2'><FaHome className="mt-1" />Home</div>
           
         </a>
@@ -320,7 +320,7 @@ useEffect(() => {
 <div>
 
   {/* Open the modal using document.getElementById('ID').showModal() method */}
-  <a href="./artists" className="btn bg-[#2f2927] text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0" ><FaList />Artists</a>
+  <a href="./artists" className="btn bg-transparent text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0" ><FaList />Artists</a>
 {/* <button className="btn bg-slate-900 text-gray-500 border-slate-900" onClick={()=>document.getElementById('my_modal_1').showModal()}><FaList />Playlist</button> */}
 
 </div>
@@ -328,7 +328,7 @@ useEffect(() => {
 
       
       {/* Open the modal using document.getElementById('ID').showModal() method */}
-<button className="btn bg-[#2f2927] text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0" onClick={()=>document.getElementById('my_modal_1').showModal()}><CiSearch />Search</button>
+<button className="btn bg-transparent text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0" onClick={()=>document.getElementById('my_modal_1').showModal()}><CiSearch />Search</button>
 <dialog id="my_modal_1" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Info</h3>
@@ -350,7 +350,7 @@ useEffect(() => {
 
 <div>    
           {/* Open the modal using document.getElementById('ID').showModal() method */}
-<button className="btn bg-[#2f2927] text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0" onClick={()=>document.getElementById('my_modal_1').showModal()}><CiCircleInfo />Info</button>
+<button className="btn bg-transparent text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] border-0" onClick={()=>document.getElementById('my_modal_1').showModal()}><CiCircleInfo />Info</button>
 <dialog id="my_modal_1" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Info</h3>
@@ -368,10 +368,10 @@ useEffect(() => {
   </div>
 
   <div className="sticky  inset-x-0 bottom-0 ">
-    <a href="#" className="flex items-center gap-2 bg-[#2f2927] p-4 ">
+    <a href="#" className="flex items-center gap-2 bg-transparent p-4 ">
       
       
-      <div className='bg-[#2f2927]'>
+      <div className='bg-transparent'>
         <p class="text-xs">
           <strong className="block text-[#eb761d] font-medium">Daily Operation</strong>
           <a href="https://develop.dailyoperation.uk">
@@ -451,7 +451,7 @@ useEffect(() => {
     <p className='text-3xl font-semibold text-gray-400'>{artistDisplay}</p>
     
   )} */}
-    <div className="mx-6 pt-10 bg-[#2f2927] grid flex flex-wrap grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+    <div className="mx-6 pt-10 bg-transparent grid flex flex-wrap grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
           {artistDataWP.map(post => (
             <div key={post.id}>
             
