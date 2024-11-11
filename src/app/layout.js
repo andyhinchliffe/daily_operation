@@ -1,6 +1,7 @@
 import { Roboto } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
+import AdSense from "./components/AdSense";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -57,6 +58,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+    <head>
+    <AdSense pId={"ca-pub-5775457776021614"} />
+    </head>
+    
       <body className={roboto.className}>{children}</body>
       <GoogleAnalytics gaId="G-T3B34PZSBB" />
     </html>
