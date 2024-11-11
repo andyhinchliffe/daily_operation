@@ -8,8 +8,8 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  title: "Daily Operation - Lo-Fi Boom Bap Hip Hop beats music platform",
-  description: "Explore top-quality Lo-Fi Boom Bap Hip Hop beats on our platform. Perfect for studying, relaxing, and creative projects.",
+  title: "Daily Operation - The Lo-Fi, Boom Bap & chilled beats music platform",
+  description: "Explore top-quality Lo-Fi, Boom Bap & chilled beats on our platform. Perfect for studying, relaxing, and creative projects.",
   keywords: [
     "Lo-fi hip hop beats",
     "Boom bap beats",

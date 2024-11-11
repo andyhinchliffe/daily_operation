@@ -101,7 +101,7 @@ export default function Home() {
 
         <div className="" key={category.id}>
 
-        <div className="card m-10 bg-base-100 w-72 min-h-96 shadow-xl">
+        <div className="card m-10 bg-[#ceb8ae] w-72 min-h-96 shadow-xl">
   <figure>
   <img
   src={`https://develop.dailyoperation.uk/streaming/artist_images/artist${category.id}.png`}
@@ -128,9 +128,9 @@ export default function Home() {
                     </button>
                   </div>
 
-    <p className="text-xs text-gray-200">{category.id}</p>
+    {/* <p className="text-xs text-gray-200">{category.id}</p> */}
     <div className="card-actions justify-end">
-    <a href={`https://dailyoperation.uk/${category.slug}`}><button  className="btn bg-slate-200 text-xs text-gray-500">Listen</button></a>
+    <a href={`https://dailyoperation.uk/${category.slug}`}><button  className="btn bg-[#eb761d] border-[#eb761d] text-xs text-gray-700">Listen</button></a>
     </div>
   </div>
 </div>

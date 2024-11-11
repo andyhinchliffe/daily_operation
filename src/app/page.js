@@ -263,7 +263,7 @@ export default function Home() {
 
 <dialog id="my_modal_8" className="modal">
   <div className="modal-box">
-    <h3 className="font-bold text-lg bg-[#ceb8ae]">Hey!</h3>
+    <h3 className="font-bold text-lg bg-white">Hey!</h3>
     <p className="py-4">Are you still listening? Press continiue to keep the music playing. Or switch to shuffle mode for longer listening listening.</p>
     <div className="modal-action">
       <form method="dialog">
@@ -341,7 +341,7 @@ export default function Home() {
     <h3 className="font-bold text-lg ">Info</h3>
     <div>
     <p className="mb-4 ">
-    Welcome to the ultimate destination for Lo-Fi Boom Bap Beats! Our platform is a haven for those who crave smooth, soulful rhythms fused with the raw, gritty essence of boom bap. Inspired by classic hip-hop and the chilled vibes of lo-fi, we bring you a curated selection of instrumentals perfect for relaxation, studying, creative projects, or simply vibing out. Our collection blends the timeless, drum-heavy patterns of boom bap with the laid-back, nostalgic atmosphere of lo-fi music. Whether you&#39;re an artist looking for the perfect background track or a listener who enjoys mellow beats with that old-school hip-hop feel, our platform has something for everyone. Tune in to experience seamless playlists, handpicked by experts, designed to help you focus, unwind, or find inspiration in the grooves of soulful samples and dusty drums.
+    Welcome to the ultimate destination for Lo-Fi, Boom Bap & chilled beats! Our platform is a haven for those who crave smooth, soulful rhythms fused with the raw, gritty essence of boom bap. Inspired by classic hip-hop and the chilled vibes of lo-fi, we bring you a curated selection of instrumentals perfect for relaxation, studying, creative projects, or simply vibing out. Our collection blends the timeless, drum-heavy patterns of boom bap with the laid-back, nostalgic atmosphere of lo-fi music. Whether you&#39;re an artist looking for the perfect background track or a listener who enjoys mellow beats with that old-school hip-hop feel, our platform has something for everyone. Tune in to experience seamless playlists, handpicked by experts, designed to help you focus, unwind, or find inspiration in the grooves of soulful samples and dusty drums.
 </p>
 
 </div>
