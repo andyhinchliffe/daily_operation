@@ -421,7 +421,7 @@ export default function Home() {
 <div className='hidden w-36 lg:block'>
 
 
-<h2 className=" ml-4 text-[#ceb8ae] text-xs">Lo-Fi Boom Bap & chilled beats</h2>
+<h2 className=" ml-4 text-[#ceb8ae] text-xs">The Lo-fi, Boom Bap & chilled beats music platform</h2>
 
 <div className=" ml-4 text-[#ceb8ae] font-semibold text-sm">Beta Version</div>
 
@@ -636,7 +636,7 @@ export default function Home() {
         <div className="text-xs">
           <strong className="block font-bold text-lg text-[#ceb8ae] font-medium">Daily Operation</strong>
           <a href="https://dailyoperation.uk">
-          <p className="text-[#ceb8ae]">The Lo-fi Boom Bap Beats Music Platform</p>
+          <p className="text-[#ceb8ae]">The Lo-fi, Boom Bap  chilled beats music platform</p>
           <p className="text-xs text-[#ceb8ae]" > dailyoperation.uk </p>
           </a>
         </div>
