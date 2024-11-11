@@ -406,7 +406,7 @@ export default function Home() {
   <div className="card-body ">
     <h2 className="card-title text-[#ceb8ae]">The Platform For</h2>
     
-    <p className="text-[#ceb8ae] animate-fade-up">Lo Fi Boom Bap Beats</p>
+    <p className="text-[#ceb8ae] animate-fade-up">Lo Fi, Boom Bap & chilled beats</p>
     <div className="card-actions justify-end">
     {!isLoaded ?<span className="loading loading-ring loading-lg"></span> : <button className="btn bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" onClick={() => setFrontPage(false)}>Enter</button>}
     
@@ -421,7 +421,7 @@ export default function Home() {
 <div className='hidden w-36 lg:block'>
 
 
-<h2 className=" ml-4 text-[#ceb8ae] text-xs">Lo-Fi Boom Bap Beats</h2>
+<h2 className=" ml-4 text-[#ceb8ae] text-xs">Lo-Fi Boom Bap & chilled beats</h2>
 
 <div className=" ml-4 text-[#ceb8ae] font-semibold text-sm">Beta Version</div>
 
