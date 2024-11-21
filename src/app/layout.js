@@ -59,8 +59,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5775457776021614"
-     crossorigin="anonymous"></script>
+    {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5775457776021614"
+     crossorigin="anonymous"></script> */}
     <AdSense pId={"ca-pub-5775457776021614"} />
     </head>
     
