@@ -1,4 +1,4 @@
-"client"
+"use client"
 import React, { useEffect } from "react";
 
 const AdBanner = ({ dataAdSlot, dataAdFormat, dataFullWidthResponsive }) => {
