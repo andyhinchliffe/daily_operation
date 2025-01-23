@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 
 import Image from "next/image";
+import Link from 'next/link';
 
 import {Howl, Howler} from 'howler';
 import { CiSearch } from "react-icons/ci";
@@ -405,15 +406,35 @@ export default function Home() {
       alt="Shoes" />
   </figure>
   <div className="card-body ">
-    <h2 className="card-title text-[#ceb8ae]">The Platform For</h2>
+    <h2 className="card-title text-[#eb761d] ">Daily Operation</h2>
     
-    <p className="text-[#ceb8ae] animate-fade-up">Lo Fi, Boom Bap & chilled beats</p>
-    <div className="card-actions justify-end">
-    {!isLoaded ?<span className="loading loading-ring loading-lg"></span> : <button className="btn bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" onClick={() => setFrontPage(false)}>Enter</button>}
+    <p className="text-[#ceb8ae] text-sm animate-fade-up mb-10">Lo Fi, Boom Bap & chilled beats</p>
     
-      
+
+
+
+    
+    <div className="card-actions">
+    <p className="pt-2 text-[#ceb8ae] font-bold ">- Streaming Platform</p>
+    {!isLoaded ?<span className="loading mr-3  loading-ring loading-lg"></span> : <button className="btn bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" onClick={() => setFrontPage(false)}>Open</button>}
     </div>
+    <Link href="https://radio.dailyoperation.uk/">
+    <div className="card-actions"><p className="pt-2 text-[#ceb8ae] font-bold">- Radio Player</p><button className="btn bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" >Open</button></div>
+    </Link>
+
+    <Link href="https://info.dailyoperation.uk/">
+    <div className="card-actions"><p className="pt-2 text-[#ceb8ae] font-bold ">- Info / Blog</p><button className="btn bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" >Open</button></div>
+    </Link>
+    
+    
+    
   </div>
+
+  
+
+
+    
+
 </div></div> : 
   
 
