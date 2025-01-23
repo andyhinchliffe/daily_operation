@@ -14,7 +14,7 @@ import { FaList } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa6";
 import CookieConsent from "react-cookie-consent";
 import { FaShuffle } from "react-icons/fa6";
-import AdBanner from "./components/AdBanner";
+// import AdBanner from "./components/AdBanner";
 
 
 
@@ -653,11 +653,11 @@ export default function Home() {
 
 {/* ------More Button -------- */}
 
-<AdBanner
+{/* <AdBanner
                 dataAdFormat="auto"
                 dataFullWidthResponsive={true}
                 dataAdSlot="1911681227"
-              />
+              /> */}
 
 
  <footer className="footer bg-[#5c4d45] text-[#ceb8ae]-content p-10 mt-10">
