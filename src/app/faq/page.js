@@ -55,9 +55,9 @@ const page = () => {
 </div>
 <div className="collapse  my-1 bg-base-300">
   <input type="radio" name="my-accordion-1" />
-  <div className="collapse-title text-xl font-medium">Why don&#39;t I recognize any of the artists&#39; names?</div>
+  <div className="collapse-title text-xl font-medium">Why Is the Platform in Beta Mode?</div>
   <div className="collapse-content">
-  <p>We ask every artist to release their music on our platform under a new alias or pseudonym exclusive to us, regardless of whether they&#39;ve released music on other platforms. Most of our artists are established musicians and producers, but they&#39;ve started a new project specifically for us.</p>
+  <p>The platform is currently in beta mode as we evaluate server capacity and implement new features. During this phase, we are closely monitoring system performance and user interactions to ensure a seamless experience upon full release.</p>
   </div>
 </div>
 
