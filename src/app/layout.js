@@ -1,6 +1,7 @@
 import { Roboto } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
+
 import AdSense from "./components/AdSense";
 
 const roboto = Roboto({
