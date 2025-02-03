@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
     <head>
     {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5775457776021614"
      crossorigin="anonymous"></script> */}
-    <AdSense pId={"ca-pub-5775457776021614"} />
+    <AdSense pId={"pub-5775457776021614"} />
     </head>
     
       <body className={roboto.className}>{children}</body>
