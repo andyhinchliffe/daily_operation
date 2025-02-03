@@ -6,7 +6,6 @@ import Head from 'next/head';
 
 const AdSense = ({ pId }) => {
   return (
-    <Head>
     <Script
       async
       src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${pId}`}
@@ -16,7 +15,6 @@ const AdSense = ({ pId }) => {
         console.error("AdSense script failed to load:", error);
       }}
     />
-    </Head>
   );
 };
 
