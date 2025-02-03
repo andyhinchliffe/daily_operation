@@ -1,4 +1,4 @@
-'use client';
+
 
 import { Roboto } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google'
