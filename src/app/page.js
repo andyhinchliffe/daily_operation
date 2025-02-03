@@ -14,7 +14,7 @@ import { FaList } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa6";
 import CookieConsent from "react-cookie-consent";
 import { FaShuffle } from "react-icons/fa6";
-// import AdBanner from "./components/AdBanner";
+import AdBanner from "./components/AdBanner";
 
 
 
