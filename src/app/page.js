@@ -15,6 +15,11 @@ import { FaPlay } from "react-icons/fa6";
 import CookieConsent from "react-cookie-consent";
 import { FaShuffle } from "react-icons/fa6";
 import AdBanner from "./components/AdBanner";
+import { PiVinylRecord } from "react-icons/pi";
+import { FaRadio } from "react-icons/fa6";
+import { FaInfoCircle } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
+
 
 
 
@@ -416,14 +421,18 @@ export default function Home() {
     
     <div className="card-actions">
     <p className="pt-2 text-[#ceb8ae] font-bold ">- Streaming Platform</p>
-    {!isLoaded ?<span className="loading mr-3  loading-ring loading-lg"></span> : <button className="btn bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" onClick={() => setFrontPage(false)}>Open</button>}
+    {!isLoaded ?<span className="loading mr-3  loading-ring loading-lg"></span> : <button className="btn px-6 bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" onClick={() => setFrontPage(false)}><PiVinylRecord size={20} /></button>}
     </div>
     <Link href="https://radio.dailyoperation.uk/">
-    <div className="card-actions"><p className="pt-2 text-[#ceb8ae] font-bold">- Radio Player</p><button className="btn bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" >Open</button></div>
+    <div className="card-actions"><p className="pt-2 text-[#ceb8ae] font-bold">- Radio Player</p><button className="btn px-6 bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" ><FaRadio size={20} /></button></div>
     </Link>
 
     <Link href="https://info.dailyoperation.uk/">
-    <div className="card-actions"><p className="pt-2 text-[#ceb8ae] font-bold ">- Info / Blog</p><button className="btn bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" >Open</button></div>
+    <div className="card-actions"><p className="pt-2 text-[#ceb8ae] font-bold ">- Info / Blog</p><button className="btn px-6 bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" ><FaInfoCircle size={20} /></button></div>
+    </Link>
+
+    <Link href="https://download.dailyoperation.uk/">
+    <div className="card-actions"><p className="pt-2 text-[#ceb8ae] font-bold ">- Download Tracks</p><button className="btn px-6 bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" ><FaDownload size={20} /></button></div>
     </Link>
     
     
@@ -677,6 +686,7 @@ export default function Home() {
     <a href="https://info.dailyoperation.uk" className="link link-hover text-[#ceb8ae] ">Blog/Info</a>
     <a href="/contact" className="link link-hover text-[#ceb8ae] ">Contact</a>
     <a href="https://radio.dailyoperation.uk" className="link link-hover text-[#ceb8ae]">Radio</a>
+    <a href="https://download.dailyoperation.uk" className="link link-hover text-[#ceb8ae]">Download</a>
     <a href="https://dailyoperationuk.substack.com/podcast" className="link link-hover text-[#ceb8ae]">Podcast</a>
     <a href="https://youtube.com/@dailyoperationuk" className="link link-hover text-[#ceb8ae]">YouTube</a>
     
