@@ -3,6 +3,8 @@ import React from 'react'
 
 
 
+
+
 import { FaHome } from "react-icons/fa";
 
 
@@ -51,6 +53,18 @@ const page = () => {
   <div className="collapse-title text-xl font-medium">How does the platform work?</div>
   <div className="collapse-content">
   <p>Our artists upload their music to the platform as individual tracks. When a track ends, another track by a random artist is automatically played, creating a continuous listening experience.</p>
+  {/* Embedded YouTube Video */}
+  <div className="flex justify-center mt-6">
+        <iframe
+          className="w-full md:w-2/3 h-64 md:h-96"
+          src="https://www.youtube.com/embed/-vKOnCZoWUE?si=YVhkNd7eT9NeTE5o" 
+          
+          title="YouTube video"
+          
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
   </div>
 </div>
 <div className="collapse  my-1 bg-base-300">
