@@ -344,7 +344,7 @@ export default function Home() {
  {/* Open the modal using document.getElementById('ID').showModal() method */}
  <button className="btn text-2xl text-[#eb761d] bg-transparent hover:bg-[#745c4d] hover:border-[#745c4d] border-transparent " onClick={()=>document.getElementById('my_modal_4').showModal()}><CiCircleInfo /></button>
 <dialog id="my_modal_4" className="modal">
-  <div className="modal-box bg-[#ceb8ae]">
+  <div className="modal-box bg-gray-200">
     <h3 className="font-bold text-lg ">Info</h3>
     <div>
     <p className="mb-4 ">
