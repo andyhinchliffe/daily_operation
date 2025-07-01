@@ -64,13 +64,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     <head>
-    <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5775457776021614"
-     crossorigin="anonymous"></Script>
+    {/* <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5775457776021614"
+     crossorigin="anonymous"></Script> */}
     {/* <AdSense pId={"pub-5775457776021614"} /> */} 
     </head>
     
       <body className={roboto.className}>{children}</body>
-      <GoogleAnalytics gaId="G-T3B34PZSBB" />
+      {/* <GoogleAnalytics gaId="G-T3B34PZSBB" /> */}
     </html>
   );
 }

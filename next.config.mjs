@@ -1,15 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      remotePatterns: [
+  images: {
+    remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'develop.dailyoperation.uk',
+        hostname: 'dailyoperation.sbs',
         port: '',
-        pathname: '/**',
+        pathname: '/audio/wp-content/uploads/**',
       },
     ],
-    },
-  };
+  },
+};
 
 export default nextConfig;
+
+

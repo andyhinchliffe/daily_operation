@@ -14,7 +14,7 @@ import { FaList } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa6";
 import CookieConsent from "react-cookie-consent";
 import { FaShuffle } from "react-icons/fa6";
-import AdBanner from "./components/AdBanner";
+// import AdBanner from "./components/AdBanner";
 import { PiVinylRecord } from "react-icons/pi";
 import { FaRadio } from "react-icons/fa6";
 import { FaInfoCircle } from "react-icons/fa";
@@ -56,7 +56,7 @@ export default function Home() {
   
 
   useEffect(() => {
-    fetch(`https://develop.dailyoperation.uk/streaming/wp-json/wp/v2/posts?_embed&per_page=${numToLoad}`, {
+    fetch(`https://dailyoperation.sbs/audio/wp-json/wp/v2/posts?_embed&per_page=${numToLoad}`, {
       method: 'GET',
     })
   .then(response => {
@@ -71,7 +71,7 @@ export default function Home() {
     setArtistDataWP(data)
     setPlaying(data[3])
     const trackId = data[3].id;
-    setTrackPath(`https://develop.dailyoperation.uk/audio/track${trackId}.mp3`)
+    // setTrackPath(`https://develop.dailyoperation.uk/audio/track${trackId}.mp3`)
     setIsLoaded(true);
     
     
@@ -131,7 +131,7 @@ export default function Home() {
   
     if (playCount < playLimitNum) {
       const trackId = track.id;
-      const newTrackPath = `https://develop.dailyoperation.uk/audio/track${trackId}.mp3`;
+      const newTrackPath = `https://dailyoperation.sbs/audio/audio/track${trackId}.mp3`;
       const sound = new Howl({
         src: [newTrackPath],
         html5: true,
@@ -420,10 +420,10 @@ export default function Home() {
 
     
     <div className="card-actions">
-    <p className="pt-2 text-[#ceb8ae] font-bold ">- Streaming Platform</p>
+    <p className="pt-2 text-[#ceb8ae] font-bold ">- Music Platform</p>
     {!isLoaded ?<span className="loading mr-3  loading-ring loading-lg"></span> : <button className="btn px-6 bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" onClick={() => setFrontPage(false)}><PiVinylRecord size={20} /></button>}
     </div>
-    <Link href="https://radio.dailyoperation.uk/">
+    {/* <Link href="https://radio.dailyoperation.uk/">
     <div className="card-actions"><p className="pt-2 text-[#ceb8ae] font-bold">- Radio Player</p><button className="btn px-6 bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" ><FaRadio size={20} /></button></div>
     </Link>
 
@@ -433,7 +433,7 @@ export default function Home() {
 
     <Link href="https://download.dailyoperation.uk/">
     <div className="card-actions"><p className="pt-2 text-[#ceb8ae] font-bold ">- Download Tracks</p><button className="btn px-6 bg-[#eb761d] border-[#eb761d] hover:bg-[#987d6e] hover:border-[#987d6e]" ><FaDownload size={20} /></button></div>
-    </Link>
+    </Link> */}
     
     
     
@@ -683,10 +683,10 @@ export default function Home() {
       <div></div>
  <nav>
     <h6 className="footer-title text-[#ceb8ae]">Daily Operation</h6>
-    <a href="https://info.dailyoperation.uk" className="link link-hover text-[#ceb8ae] ">Blog/Info</a>
+    {/* <a href="https://info.dailyoperation.uk" className="link link-hover text-[#ceb8ae] ">Blog/Info</a>
     <a href="/contact" className="link link-hover text-[#ceb8ae] ">Contact</a>
     <a href="https://radio.dailyoperation.uk" className="link link-hover text-[#ceb8ae]">Radio</a>
-    <a href="https://download.dailyoperation.uk" className="link link-hover text-[#ceb8ae]">Download</a>
+    <a href="https://download.dailyoperation.uk" className="link link-hover text-[#ceb8ae]">Download</a> */}
     <a href="https://dailyoperationuk.substack.com/podcast" className="link link-hover text-[#ceb8ae]">Podcast</a>
     <a href="https://youtube.com/@dailyoperationuk" className="link link-hover text-[#ceb8ae]">YouTube</a>
     
