@@ -326,7 +326,7 @@ export default function Home() {
   } text-[#eb761d] border-transparent hover:bg-[#745c4d] hover:border-transparent`} onClick={() => handleShuffleMode()}><FaShuffle /></button>
 
 
-{/* <a href="https://info.dailyoperation.uk"><div className="hidden sm:block ml-2 text-[#ceb8ae] font-semibold text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] p-3 rounded rounded-xl">Blog</div></a> */}
+<a href="https://info.dailyoperation.uk"><div className="hidden sm:block ml-2 text-[#ceb8ae] font-semibold text-[#eb761d] hover:bg-[#745c4d] hover:border-[#745c4d] p-3 rounded rounded-xl">Blog</div></a>
 
  {/* Open the modal using document.getElementById('ID').showModal() method */}
  <button className="btn hidden sm:block text-2xl text-[#eb761d] bg-transparent hover:bg-[#745c4d] hover:border-[#745c4d] border-transparent" onClick={()=>document.getElementById('my_modal_3').showModal()}><CiSearch/></button>
