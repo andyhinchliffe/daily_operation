@@ -98,7 +98,7 @@ Thank you for visiting dailyoperation.uk. We appreciate your trust in us to use 
       <div></div>
  <nav>
     <h6 className="footer-title text-[#ceb8ae]">Daily Operation</h6>
-    <a href="https://blog.dailyoperation.uk" className="link link-hover text-[#ceb8ae] ">Blog</a>
+    {/* <a href="https://blog.dailyoperation.uk" className="link link-hover text-[#ceb8ae] ">Blog</a> */}
     <a href="/contact" className="link link-hover text-[#ceb8ae] ">Contact</a>
     <a href="https://youtube.com/@dailyoperationuk" className="link link-hover text-[#ceb8ae]">YouTube</a>
     
