@@ -4,14 +4,19 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'dailyoperation.sbs',
-        port: '',
+        hostname: 'dailyoperation.uk',
         pathname: '/audio/wp-content/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
       },
     ],
   },
 };
 
 export default nextConfig;
+
 
 
